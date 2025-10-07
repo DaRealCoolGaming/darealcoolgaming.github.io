@@ -1,0 +1,31 @@
+<!Doctype html>
+<html lang="en">
+<head>
+    <title>Texas Sheet Cake</title>
+    <script src="../../js/validate.js"></script>
+</head>
+<body>
+    <h1>Texas Sheet Cake</h1>
+    <p>Add to saucepan: water, butter, and cocoa power, bring mixture to a boil.</p>
+    <p>In a bowl: mix flour, sugar, baking soda, and salt.</p>
+    <p>In another bowl, mix sour cream, eggs, and vanilla.<br>Mix until combined</p>
+    <p>Combing batter. Once the chocolate in the saucepan in boiling, remove it from the heat<br>and pour it into the batter.Mix until no lumps.</p>
+    <p>Pour into sheet pan. Smooth with a spatula. </p>
+    <p>Bake at 350 degrees for 15-20 minutes.</p>  
+    <p>In a saucepan add milk cocao and butter, boil it. </p>
+    <p>Stir in powdered sugar until no lumps.</p>
+    <P>Pour on cake. </p>
+        <p>Eat</p>
+        <br>
+    <h3>Instructions Summary</h3>
+    <ul>
+        <li>Mix dry ingredients</li>
+        <li>Mix wet ingredients</li>
+        <li>Combine both mixtures</li>
+        <li>Bake at 350 degrees for 15-20 minutes</li>
+        <li>Make frosting</li>
+        <li>Frost cake</li>
+        <li>Eat</li>
+    </ul>
+</body>
+</html>
