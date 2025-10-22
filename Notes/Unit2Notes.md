@@ -43,3 +43,11 @@ Physical link technology like Ethernet, Wi-Fi, and Cell Service.
 -LTE: 4G Cell Service that allows for connection with the Internet without wires on a cellular device. 
 
 -Ethernet: Lan technology that allows users to access Internet WITH wires.
+
+-Positional Number System: Number system with each digits value corresponding on its face value and position. 
+
+-Binary: Binary is a number system using 1s and 0s
+
+-Decimal: Decimal is a number system using 0-9
+
+-ASCII: TBD at this date
