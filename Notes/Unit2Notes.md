@@ -50,4 +50,8 @@ Physical link technology like Ethernet, Wi-Fi, and Cell Service.
 
 -Decimal: Decimal is a number system using 0-9
 
--ASCII: TBD at this date
+-ASCII: 7 Bit character encoding using number 0-127 to represent letters numers and symbols. 
+
+-XOR: Means exclusive OR
+
+-Bit Shift: A bitwise operation moving bits left and right within a value using multiplication or division.
