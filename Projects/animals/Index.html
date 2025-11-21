@@ -4,29 +4,31 @@
     <meta charset="UTF-8">
     <title>Zoo Overview</title>
     <script src="../js/init.js"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
         <h1>Welcome to the City Zoo</h1>
-        <p>Explore the wonders of wildlife at the City Zoo!</p>
+        <p id="block1">Explore the wonders of wildlife at the City Zoo!</p>
     </header>
     <nav>
         <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="animals.html">Animals</a></li>
+            <li id="firstLink"><a href="index.html">Home</a></li>
+            <li id="secondLink"><a href="animals.html">Animals</a></li>
         </ul>
     </nav>
     <main>
         <section>
             <h2>Zoo Information</h2>
+            <div id="Info">
             <p>Our zoo is home to hundreds of animals from all over the world. Here's a quick guide to help you plan your visit:</p>
             <table>
                 <caption>Zoo Hours and Admission</caption>
                 <thead>
                     <tr>
-                        <th>Day</th>
+                        <th class="checker">Day</th>
                         <th>Hours</th>
-                        <th>Admission</th>
+                        <th class="checker">Admission</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -42,6 +44,7 @@
                     </tr>
                 </tbody>
             </table>
+            </div>
         </section>
     </main>
     <footer>
