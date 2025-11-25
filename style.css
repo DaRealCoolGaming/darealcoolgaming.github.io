@@ -1,0 +1,7 @@
+@font-face{
+    font-family:"Comic";
+    src:url("fonts/Comic.ttf")
+}
+h1, body, td, th, table, tr, h2, h3, h4{
+font-family:Comic;
+}
