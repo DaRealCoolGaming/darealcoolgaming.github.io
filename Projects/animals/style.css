@@ -2,8 +2,8 @@
     font-family:Comic;
     src:url("../../fonts/Comic.ttf")
 }
-td, th, table, tr{
-    border: 4px lime;
+td, th, table, tr, thead, tbody, caption{
+    border: 4px, groove, #5bcefa;
     border-collapse: collapse;
     font-family: Comic;
 
