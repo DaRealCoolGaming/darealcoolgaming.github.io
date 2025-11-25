@@ -6,7 +6,6 @@ td, th, table, tr, thead, tbody, caption{
     border: 4px, groove, #5bcefa;
     border-collapse: collapse;
     font-family: Comic;
-
 }
 body{
 background-color:aliceblue;
@@ -15,6 +14,10 @@ font-family:"Comic"
 h1{
     background-color:#5bcefa;
     font-family: Comic;
+    border:3px solid black;
+    padding:30px;
+    margin:20px;
+    text-align: center;
 }
 #block1{
     background-color:#f5a9b8;
