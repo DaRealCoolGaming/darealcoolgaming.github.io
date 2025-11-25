@@ -1,7 +1,40 @@
 @font-face{
-    font-family:"Comic";
+    font-family:Comic;
     src:url("fonts/Comic.ttf")
 }
-h1, body, td, th, table, tr, h2, h3, h4{
-font-family:Comic;
+
+h1{
+    font-family:Comic;
+}
+
+h2{
+    font-family:Comic;
+}
+
+h3{
+    font-family:Comic;
+}
+
+h4{
+    font-family:Comic;
+}
+
+body{
+    font-family:Comic;
+}
+
+td{
+    font-family:Comic;
+}
+
+th{
+    font-family:Comic;
+}
+
+table{
+    font-family:Comic;
+}
+
+tr{
+    font-family:Comic;
 }

@@ -1,5 +1,5 @@
 @font-face{
-    font-family:"Comic";
+    font-family:Comic;
     src:url("../../fonts/Comic.ttf")
 }
 td, th, table, tr{
