@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>CSS Box Model Practice</title>
+    <style>
+#Red {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    margin-left: 750px;
+    border: 2px solid black;
+    background-clip: content-box;
+}
+#Blue {
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+    margin-left: 1250px;
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 100px;
+    background-clip: padding-box;}
+#Green {
+    width: 100px;
+    height: 100px;
+    background-color: green;
+    margin: 10px;
+    padding: 10px;
+    border: 2px solid black;
+    background-clip: border-box;}
+#Yellow {
+    width: 100px;
+    height: 100px;
+    background-color: yellow;
+    margin-left: 800px;
+    padding: 10px;
+    border: 2px solid black;
+    box-sizing: border-box;}
+#Purple {
+    width: 100px;
+    height: 100px;
+    background-color: purple;
+    margin-left: 650px;
+    padding: 10px;
+    border: 2px solid black;
+    box-sizing: content-box;}
+    </style>
+    <script src="../js/validate.js"></script>
+</head>
+<body>
+<div id="Red"></div>
+<div id="Blue"></div>
+<div id="Green"></div>
+<div id="Yellow"></div>
+<div id="Purple"></div>
+</body>
+</html>
