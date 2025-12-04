@@ -2,9 +2,17 @@
     font-family:Comic;
     src:url("fonts/Comic.ttf")
 }
-
+header{
+    font-family:Comic;
+    margin-top:5px
+}
+footer{
+    font-family:Comic;
+    margin-top:5px;
+}
 h1{
     font-family:Comic;
+        margin-top: 24px;
 }
 
 h2{
@@ -21,6 +29,7 @@ h4{
 
 body{
     font-family:Comic;
+    background-color: gray;
 }
 
 td{
@@ -37,4 +46,13 @@ table{
 
 tr{
     font-family:Comic;
+}
+a:link {
+  color: aliceblue; /* A widely recognized link color */
+  text-decoration: underline; /* Always include underline */
+}
+
+a:visited {
+  color: wheat; /* A different color for visited links */
+  text-decoration: underline;
 }
