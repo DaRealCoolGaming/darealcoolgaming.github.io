@@ -48,11 +48,15 @@ tr{
     font-family:Comic;
 }
 a:link {
-  color: aliceblue; /* A widely recognized link color */
+  color: black; /* A widely recognized link color */
   text-decoration: underline; /* Always include underline */
 }
 
 a:visited {
-  color: wheat; /* A different color for visited links */
+  color: black; /* A different color for visited links */
   text-decoration: underline;
+}
+a:focus{
+    outline: 3px solid #ffd54f;
+    outline-offset: 2px;
 }
