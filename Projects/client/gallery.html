@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <style>
+        @font-face{
+    font-family:Comic;
+    src:url("../../fonts/Comic.ttf")
+}
+        @font-face{
+    font-family:Cute;
+    src:url("../../fonts/HowCute-gylP.ttf")
+}
+        @keyframes rainbow-cycle {
+  0%   { background-color: #ffadad; }
+  14%  { background-color: #ffd6a5; } 
+  28%  { background-color: #fdffb6; } 
+  42%  { background-color: #caffbf; } 
+  56%  { background-color: #9bf6ff; } 
+  70%  { background-color: #a0c4ff; } 
+  84%  { background-color: #bdb2ff; }
+  100% { background-color: #ffc6ff; }
+                }
+    body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color:aliceblue;
+            animation-name: rainbow-cycle;
+            animation-duration: 10s; 
+            animation-iteration-count: infinite;
+            animation-timing-function: linear; 
+        }
+        h1 {
+            font-family:Cute, sans-serif;
+            text-align: center;
+            color: #333;
+        }
+        p {
+            font-family:Comic, sans-serif;
+            text-align: left;
+            color: #333;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            padding: 10px;
+        }
+        .art-item {
+            background-color: #fff;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .art-image {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        footer {
+            background-color: #e6ccff;
+            width: 100%;
+            text-align: center;
+            margin-top: auto;
+}
+    </style>
+</head>
+<body>
+<h1>View My Art!</h1>
+<p>Here is a collection of some of my artwork.</p>
+<div class="gallery">
+    <div class="art-item">
+        <img src="artwork/art1.png" alt="Artwork 1" class="art-image">
+    </div>
+    <div class="art-item">
+        <img src="artwork/art2.png" alt="Artwork 2" class="art-image">
+    </div>
+    <div class="art-item">
+        <img src="artwork/art3.png" alt="Artwork 3" class="art-image">
+    </div>
+    <div class="art-item">
+        <img src="artwork/art4.png" alt="Artwork 4" class="art-image">
+</div>
+    <div class="art-item">
+        <img src="artwork/art5.png" alt="Artwork 5" class="art-image">
+    </div>
+    <div class="art-item">
+        <img src="artwork/art6.png" alt="Artwork 6" class="art-image">
+        </div>
+    <div class="art-item">
+        <img src="artwork/art7.png" alt="Artwork 7" class="art-image">
+        </div>
+    <div class="art-item">
+        <img src="artwork/art8.png" alt="Artwork 8" class="art-image">
+        </div>
+    <div class="art-item">
+        <img src="artwork/art11.png" alt="Artwork 11" class="art-image">
+        </div>
+    <div class="art-item">
+        <img src="artwork/art13.png" alt="Artwork 13" class="art-image">
+        </div>
+    <div class="art-item">
+        <img src="artwork/Wip1.png" alt="WIP 1" class="art-image">
+        </div>
+    <div class="art-item">
+        <img src="artwork/Wip2.png" alt="WIP 2"
+    class="art-image">
+    </div>
+    <div class="art-item">
+        <img src="artwork/Wip3.png" alt="WIP 3"
+    class="art-image">
+    </div>
+    <div class="art-item">
+        <img src="artwork/WIp4.png" alt="WIP 4"
+    class="art-image">
+    </div>
+</div>
+</body>
+<footer>
+    <div class="footer-container">
+      <p style="color:rgb(82, 7, 76);">&copy; 2025 Cyber</p>
+      <p style="color:rgb(82, 7, 76);"><a style="color:rgb(118, 6, 62); text-align:center;" href="homepage.html">Home</a></p>
+      <p style="color:rgb(82, 7, 76);"><a style="color:rgb(118, 6, 62); text-align:center;" href="commissions.html">Commissions</a></p>
+        <p style="color:rgb(82, 7, 76);"><a style="color:rgb(118, 6, 62); text-align:center;" href="about.html">About Me</a></p>
+    </div>
+  </footer>
+</html>

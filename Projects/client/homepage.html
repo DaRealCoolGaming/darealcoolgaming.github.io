@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <style>
+                @font-face{
+    font-family:Comic;
+    src:url("../../fonts/Comic.ttf")
+}
+        @font-face{
+    font-family:Cute;
+    src:url("../../fonts/HowCute-gylP.ttf")
+}
+h1 {
+
+            font-family:Cute, sans-serif;
+            text-align: center;
+            color: #333;
+            background-color: #e6ccff;
+            width: 100%;
+            margin-top: auto;
+        }
+        p {
+            font-family:Comic, sans-serif;
+            text-align: left;
+            color: #333;
+        }
+footer {
+            background-color: #e6ccff;
+            width: 100%;
+            text-align: center;
+            margin-top: auto;
+}
+        .gallery{
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .gallery .item{
+            width: calc((100% - 2rem) / 3);
+            max-width: 260px;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        .gallery img{
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 6px;
+        }
+
+        .gallery figcaption{
+            font-family:Comic, sans-serif;
+            margin-top: 0.5rem;
+            font-size: 0.95rem;
+            color: #222;
+        }
+    .Plugs{
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .Plugs .item{
+            width: calc((100% - 2rem) / 3);
+            max-width: 260px;
+            box-sizing: border-box;
+            text-align: center; 
+        }
+
+        .Plugs img{
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 6px;
+        }
+
+        .Plugs figcaption{
+            font-family:Comic, sans-serif;
+            margin-top: 0.5rem;
+            font-size: 0.95rem;
+            color: #222;
+        }
+        @media (max-width: 700px){
+            .gallery .item{ width: 100%; max-width: 640px; }
+        }
+                @keyframes rainbow-cycle {
+  0%   { background-color: #ffadad; }
+  14%  { background-color: #ffd6a5; } 
+  28%  { background-color: #fdffb6; } 
+  42%  { background-color: #caffbf; } 
+  56%  { background-color: #9bf6ff; } 
+  70%  { background-color: #a0c4ff; } 
+  84%  { background-color: #bdb2ff; }
+  100% { background-color: #ffc6ff; }
+                }
+                body {
+                                animation-name: rainbow-cycle;
+            animation-duration: 10s; 
+            animation-iteration-count: infinite;
+            animation-timing-function: linear; 
+                }
+    </style>
+</head>
+<body>
+    <h1>Heya! Welcome to my site!</h1>
+
+    <main>
+        <section class="gallery">
+            <figure class="item">
+                <img src="artwork/Fish.png" alt="Example Art">
+                <figcaption> <a href="gallery.html">Gallery!</a></figcaption>
+            </figure>
+
+            <figure class="item">
+                <img src="artwork/seeder.png" alt="My OC">
+                <figcaption> <a href="about.html">About Me!</a></figcaption>
+            </figure>
+
+            <figure class="item">
+                <img src="artwork/Ranbrow.png" alt="Commissions">
+                <figcaption> <a href="commissions.html">Commissions!</a></figcaption>
+            </figure>
+        </section>
+            <h1 style="text-align:center;">Contact Me!</h1>
+        <section class="Plugs">
+        <figure class="item">
+            <img src="artwork/Instagram.png" alt="Instagram">
+            <figcaption>cyber2bodacious</figcaption>
+        </figure>
+        <figure class="item">
+            <img src="artwork/Tiktok.png" alt="Tiktok">
+            <figcaption>dangerousboobs</figcaption>
+        </figure>
+        <figure class="item">
+            <img src="artwork/Discord.png" alt="Discord">
+            <figcaption>seedersaw</figcaption>
+        </figure>
+        <figure class="item">
+            <img src="artwork/Roblox.png" alt="Roblox">
+            <figcaption>cyber_k1tty</figcaption>
+        </figure>
+        </section>
+    </main>
+</body>
+<footer>
+    <div class="footer-container">
+      <p style="color:rgb(82, 7, 76);">&copy; 2025 Cyber</p>
+      <p style="color:rgb(82, 7, 76);"><a style="color:rgb(118, 6, 62); text-align:center;" href="homepage.html">Home</a></p>
+      <p style="color:rgb(82, 7, 76);"><a style="color:rgb(118, 6, 62); text-align:center;" href="commissions.html">Commissions</a></p>
+        <p style="color:rgb(82, 7, 76);"><a style="color:rgb(118, 6, 62); text-align:center;" href="about.html">About Me</a></p>
+    </div>
+  </footer>
+</html>
