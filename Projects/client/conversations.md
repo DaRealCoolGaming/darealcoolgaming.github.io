@@ -4,7 +4,7 @@ Cyber=Chia
 
 Axo.wav=Adrian
 
-# 1st Conversation
+# Day 1
 
 Cyber
 
@@ -102,3 +102,32 @@ Cyber
 future art would be wips 🤔🤔
 
 ok i gotchu
+
+# Day 2
+
+Axo.wav
+
+ — 3:46 PM
+
+@Cyber i need a pic of seed
+
+Cyber
+
+ — 5:26 PM
+
+i have more seed but i dont feel like looki
+
+liing
+
+looking
+
+Axo.wav
+
+ — 5:29 PM
+wow
+
+Cyber
+
+ — 5:30 PM
+ 
+:seedzburger:
