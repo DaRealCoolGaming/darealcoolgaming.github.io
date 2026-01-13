@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <style>
+                @font-face{
+    font-family:Comic;
+    src:url("../../fonts/Comic.ttf")}
+        @font-face{
+    font-family:Cute;
+    src:url("../../fonts/HowCute-gylP.ttf")}
+
+    .container {
+    display: flex;
+    align-items: center; 
+    justify-content: space-between; 
+    gap: 20px; 
+    padding: 20px; 
+    margin: 20px auto; 
+}
+h1 {
+
+            font-family:Cute, sans-serif;
+            text-align: center;
+            color: #333;
+            background-color: #e6ccff;
+            width: 100%;
+            margin-top: auto;
+        }
+        p {
+            font-family:Comic, sans-serif;
+            color: #333;
+        }
+footer {
+            background-color: #e6ccff;
+            width: 100%;
+            text-align: center;
+            margin-top: auto;
+}
+.text-block {
+    flex: 1; 
+    text-align: center;
+    padding-right: 10px; 
+}
+
+.image-container img {
+    max-width: 100%; 
+    height: auto; 
+    display: block; 
+    border-radius: 8px; 
+}
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; 
+    }
+
+    .text-block {
+        padding-right: 0;
+        margin-bottom: 15px; 
+    }
+}
+@keyframes rainbow-cycle {
+0%   { background-color: #ffadad; }
+  14%  { background-color: #ffd6a5; } 
+  28%  { background-color: #fdffb6; } 
+  42%  { background-color: #caffbf; } 
+  56%  { background-color: #9bf6ff; } 
+  70%  { background-color: #a0c4ff; } 
+  84%  { background-color: #bdb2ff; }
+  100% { background-color: #ffadad; }
+                }
+                body {
+                                animation-name: rainbow-cycle;
+            animation-duration: 10s; 
+            animation-iteration-count: infinite;
+            animation-timing-function: linear; 
+                }
+</style>
+</head>
+<body>
+    <h1 style="text-align:center;">About Me!</h1>
+<div class="container">
+        <div class="text-block">
+            <p>
+                blah
+            </p>
+        </div>
+        <div class="image-container">
+            <img src="artwork/Seed.png" alt="Seed character">
+        </div>
+    </div>
+    <br>
+    <div class="container">
+        <div class="image-container">
+            <img src="artwork/SeedGif3.gif" alt="Seed waving">
+        </div>
+        <div class="text-block">
+            <p>
+                blah
+            </p>
+    </div>
+</body>
+</html>

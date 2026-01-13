@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Commissions</title>
+    <style>
+                @font-face{
+    font-family:Comic;
+    src:url("../../fonts/Comic.ttf")
+}
+        @font-face{
+    font-family:Cute;
+    src:url("../../fonts/HowCute-gylP.ttf")
+}
+h1 {
+            font-family:Cute, sans-serif;
+            text-align: center;
+            color: #333;
+            background-color: #e6ccff;
+            width: 100%;
+            margin-top: auto;
+        }
+        p {
+            font-family:Comic, sans-serif;
+            color: #333;
+        }
+            @keyframes rainbow-cycle {
+0%   { background-color: #ffadad; }
+  14%  { background-color: #ffd6a5; } 
+  28%  { background-color: #fdffb6; } 
+  42%  { background-color: #caffbf; } 
+  56%  { background-color: #9bf6ff; } 
+  70%  { background-color: #a0c4ff; } 
+  84%  { background-color: #bdb2ff; }
+  100% { background-color: #ffadad; }
+                }
+    body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color:aliceblue;
+            animation-name: rainbow-cycle;
+            animation-duration: 10s; 
+            animation-iteration-count: infinite;
+            animation-timing-function: linear; 
+        }
+.can-table {
+    flex: 1; 
+    text-align: center;
+    padding-right: 10px; 
+}
+
+.cant-table {
+    flex: 1; 
+    text-align: center;
+    padding-right: 10px; 
+}
+    .container {
+    display: flex;
+    align-items: center; 
+    justify-content: space-between; 
+    gap: 20px; 
+    padding: 20px; 
+    margin: 20px auto; 
+}
+.vertical-line {
+    border-left: 2px solid black; 
+    height: 100px; 
+  }
+  ul {
+    text-decoration: none;
+    list-style: none;
+    list-style-type: none
+  }
+</style>
+</head>
+<body>
+        <h1 style="text-align:center;">Commission Me!</h1>
+<div class="container">
+        <div class="can-table">
+            <h3 style="text-align:right;">What I Can Do</h3>
+            <ul style="text-align:right">
+                <li>Furries</li>
+                <li>Gore</li>
+                <li>Ship Art</li>
+                <li>Fan Art</li>
+                <li>Complex Backgrounds</li>
+            </ul>
+        </div>
+        <div class="vertical-line"></div>
+        <div class="cant-table">
+            <h3 style="text-align:left;">What I Can't Do</h3>
+<ul style="text-align:left">
+    <li>NSFW</li>
+    <li>Mechas</li>
+    <li>Overly Buff People</li>
+    <li>Political Art</li>
+    <li>Copy Art Styles</li>
+</ul>
+        </div>
+    </div>
+</body>
+</html>
