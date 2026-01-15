@@ -131,3 +131,61 @@ Cyber
  — 5:30 PM
  
 :seedzburger:
+
+Axo.wav
+
+ — 1/13/26, 6:59 PM
+ 
+which i still need that about me
+
+Cyber
+
+ — 1/13/26, 6:59 PM
+
+ohhh
+
+wait
+
+about me
+
+or about you 
+
+Axo.wav
+
+ — 1/13/26, 7:00 PM
+
+you
+
+Cyber
+
+ — 1/13/26, 7:00 PM
+
+makes sense
+
+Axo.wav
+
+ — 1/13/26, 7:00 PM
+
+you as in cyber
+
+Cyber
+
+ — 1/13/26, 7:00 PM
+
+ok trust
+
+i gotchu
+
+what do i put in my about me
+
+Axo.wav
+
+ — 1/13/26, 7:04 PM
+
+say things about yourself, interests, inspirations, your favorite games and shows, maybe dedicate the second paragraph to seed as seed is pretty important i think
+
+Cyber
+
+ — 1/13/26, 7:04 PM
+
+makes sense
