@@ -31,8 +31,15 @@ h1 {
             margin-top: auto;
         }
         p {
-            font-family:Comic, sans-serif;
+            font-family: Comic, sans-serif;
             color: #333;
+            overflow-wrap: break-word;
+            font-size: clamp(20px, 2.6vw, 36px);
+            line-height: 1.6;
+            margin: 0;
+        }
+        .image-container {
+            flex: 0 0 auto;
         }
 footer {
             background-color: #e6ccff;
@@ -41,16 +48,22 @@ footer {
             margin-top: auto;
 }
 .text-block {
-    flex: 1; 
-    text-align: center;
-    padding-right: 10px; 
+    flex: 1;
+    min-width: 0;
+    text-align: left;
+    padding: 20px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
 }
 
 .image-container img {
-    max-width: 100%; 
-    height: auto; 
-    display: block; 
-    border-radius: 8px; 
+    width: auto;
+    max-width: none;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    max-height: 85vh;
 }
 @media (max-width: 768px) {
     .container {
@@ -85,7 +98,7 @@ footer {
 <div class="container">
         <div class="text-block">
             <p>
-                blah
+                Hii!! My name is Cyber and I like to dilly dally and create things! I mainly do digital art but I do occasionally craft. I've been drawing for a few years, couldn't tell you when exactly. I love rainbows, glitter, bubbles, and anything joyful. My favorite colors are yellow, pink, and red! ^⁠_⁠^
             </p>
         </div>
         <div class="image-container">
@@ -99,17 +112,18 @@ footer {
         </div>
         <div class="text-block">
             <p>
-                blah
+                My main oc/sona is named Seed. A little half alien half robot fella. I don't have her lore written out because I just prefer to make up things along the way. She used to only be a robot but she fused with an alien. She's VERY cute and magical. Anyways, hope you find me cool!
             </p>
     </div>
-    </div>
-  </body>
-<footer>
+        </div>
+
+        <footer>
     <div class="footer">
       <p style="color:rgb(82, 7, 76);">&copy; 2025 Cyber</p>   
       <p style="color:rgb(82, 7, 76);"><a style="color:rgb(118, 6, 62); text-align:center;" href="homepage">Home</a></p>
       <p style="color:rgb(82, 7, 76);"><a style="color:rgb(118, 6, 62); text-align:center;" href="commissions">Commissions</a></p>
         <p style="color:rgb(82, 7, 76);"><a style="color:rgb(118, 6, 62); text-align:center;" href="about">About Me</a></p>
     </div>
-  </footer>
+    </footer>
+</body>
 </html>
