@@ -34,6 +34,16 @@ footer {
             text-align: center;
             margin-top: auto;
 }
+        .footer {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            align-items: center;
+            padding: 10px 12px;
+            flex-wrap: wrap;
+        }
         .gallery{
             display: flex;
             gap: 1rem;
@@ -56,6 +66,17 @@ footer {
             width: 100%;
             height: auto;
             border-radius: 6px;
+        }
+
+        @keyframes spin-once {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        .gallery img, .Plugs img {
+            transform-origin: 50% 50%;
+            backface-visibility: hidden;
+            will-change: transform;
+            animation: spin-once 800ms cubic-bezier(.2,.8,.2,1) 0s both;
         }
 
         .gallery figcaption{

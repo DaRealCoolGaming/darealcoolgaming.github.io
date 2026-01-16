@@ -13,68 +13,100 @@
     font-family:Cute;
     src:url("../../fonts/HowCute-gylP.ttf")}
 
-    .container {
-    display: flex;
-    align-items: center; 
-    justify-content: space-between; 
-    gap: 20px; 
-    padding: 20px; 
-    margin: 20px auto; 
-}
-h1 {
+        :root{
+            --bg-1: #fff7ff;
+            --bg-2: #f0f8ff;
+            --card-bg: #ffd6ea;
+            --accent: #b86ef6;
+        }
 
+    html, body { height: 100%; }
+    body {
+            margin: 0;
+            padding: 24px;
+            font-family: Comic, Arial, sans-serif;
+            background-color: aliceblue;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 18px;
+            animation-name: rainbow-cycle;
+            animation-duration: 10s; 
+            animation-iteration-count: infinite;
+            animation-timing-function: linear; 
+        }
+
+    h1 {
             font-family:Cute, sans-serif;
             text-align: center;
             color: #333;
-            background-color: #e6ccff;
+            background: linear-gradient(90deg,#fff2ff,#e6ccff);
             width: 100%;
-            margin-top: auto;
+            padding: 10px 0;
+            border-radius: 10px;
+            margin: 0;
+            max-width: 1100px;
         }
-        p {
-            font-family: Comic, sans-serif;
+
+    .container {
+        display: flex;
+        align-items: center; 
+        justify-content: space-between; 
+        gap: 24px; 
+        padding: 18px; 
+        margin: 0 auto; 
+        max-width: 1100px;
+        width: calc(100% - 48px);
+    }
+
+    p {
             color: #333;
             overflow-wrap: break-word;
-            font-size: clamp(20px, 2.6vw, 36px);
+            font-size: clamp(16px, 2.6vw, 20px);
             line-height: 1.6;
             margin: 0;
         }
-        .image-container {
-            flex: 0 0 auto;
-        }
-footer {
-            background-color: #e6ccff;
-            width: 100%;
-            text-align: center;
-            margin-top: auto;
-}
-.text-block {
-    flex: 1;
-    min-width: 0;
-    text-align: left;
-    padding: 20px 40px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-}
-
-.image-container img {
-    width: auto;
-    max-width: none;
-    height: auto;
-    display: block;
-    border-radius: 8px;
-    max-height: 85vh;
-}
-@media (max-width: 768px) {
-    .container {
-        flex-direction: column; 
-    }
 
     .text-block {
-        padding-right: 0;
-        margin-bottom: 15px; 
+        flex: 1;
+        min-width: 0;
+        text-align: left;
+        padding: 18px 22px;
+        background: var(--card-bg);
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.06);
     }
+
+    .image-container {
+        flex: 0 0 420px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .image-container img {
+        width: 100%;
+        max-width: 420px;
+        height: auto;
+        display: block;
+        border-radius: 12px;
+        box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+        transition: transform 220ms cubic-bezier(.2,.8,.2,1), filter 220ms;
+        transform-origin: center center;
+    }
+
+    .image-container:hover img, .image-container:focus-within img { transform: translateY(-6px) scale(1.03); filter:brightness(1.02); }
+
+@media (max-width: 820px) {
+    .container {
+        flex-direction: column; 
+        padding: 12px;
+    }
+
+    .image-container { flex: 0 0 auto; width: 80%; }
+    .text-block { padding: 14px; }
 }
+
 @keyframes rainbow-cycle {
 0%   { background-color: #ffadad; }
   14%  { background-color: #ffd6a5; } 
@@ -84,19 +116,29 @@ footer {
   70%  { background-color: #a0c4ff; } 
   84%  { background-color: #bdb2ff; }
   100% { background-color: #ffadad; }
-                }
-                body {
-                                animation-name: rainbow-cycle;
-            animation-duration: 10s; 
-            animation-iteration-count: infinite;
-            animation-timing-function: linear; 
-                }
+}
+        footer {
+            background-color: #e6ccff;
+            width: 100%;
+            text-align: center;
+            margin-top: auto;
+        }
+        .footer {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            align-items: center;
+            padding: 10px 12px;
+            flex-wrap: wrap;
+        }
 </style>
 </head>
 <body>
     <h1 style="text-align:center;">About Me!</h1>
 <div class="container">
-        <div class="text-block">
+    <div class="text-block">
             <p>
                 Hii!! My name is Cyber and I like to dilly dally and create things! I mainly do digital art but I do occasionally craft. I've been drawing for a few years, couldn't tell you when exactly. I love rainbows, glitter, bubbles, and anything joyful. My favorite colors are yellow, pink, and red! ^⁠_⁠^
             </p>
@@ -114,16 +156,15 @@ footer {
             <p>
                 My main oc/sona is named Seed. A little half alien half robot fella. I don't have her lore written out because I just prefer to make up things along the way. She used to only be a robot but she fused with an alien. She's VERY cute and magical. Anyways, hope you find me cool!
             </p>
-    </div>
         </div>
-
+                </div>
         <footer>
-    <div class="footer">
-      <p style="color:rgb(82, 7, 76);">&copy; 2025 Cyber</p>   
-      <p style="color:rgb(82, 7, 76);"><a style="color:rgb(118, 6, 62); text-align:center;" href="homepage">Home</a></p>
-      <p style="color:rgb(82, 7, 76);"><a style="color:rgb(118, 6, 62); text-align:center;" href="commissions">Commissions</a></p>
-        <p style="color:rgb(82, 7, 76);"><a style="color:rgb(118, 6, 62); text-align:center;" href="about">About Me</a></p>
-    </div>
+        <div class="footer">
+            <p style="color:rgb(82, 7, 76);">&copy; 2025 Cyber</p>
+            <p style="color:rgb(82, 7, 76);"><a style="color:rgb(118, 6, 62); text-align:center;" href="homepage">Home</a></p>
+            <p style="color:rgb(82, 7, 76);"><a style="color:rgb(118, 6, 62); text-align:center;" href="commissions">Commissions</a></p>
+                <p style="color:rgb(82, 7, 76);"><a style="color:rgb(118, 6, 62); text-align:center;" href="about">About Me</a></p>
+        </div>
     </footer>
-</body>
+        </body>
 </html>

@@ -135,7 +135,7 @@ Cyber
 Axo.wav
 
  — 1/13/26, 6:59 PM
- 
+
 which i still need that about me
 
 Cyber
@@ -189,3 +189,39 @@ Cyber
  — 1/13/26, 7:04 PM
 
 makes sense
+
+## Day 3 
+
+Cyber
+
+ — 5:43 PM
+
+MB MB
+
+Hii!! My name is cyber and I like to dilly dally and create things! I mainly do digital art but I do occasionally craft. I've 
+
+been drawing for a few years, couldn't tell you when exactly. I love rainbows, glitter, bubbles, and anything joyful. My 
+
+favorite colors are yellow, pink, and red ^⁠_⁠^
+
+My main oc/sona is named seed. A little half alien half robot fella. I don't have her lore written out because I just prefer to 
+
+make up things along the way. She used to only be a robot but she fused with an alien. She's VERY cute and magical. Anyways, 
+
+hope you find me cool!
+
+is this decent enough
+
+Axo.wav
+
+ — 5:48 PM
+
+yeah that’d perfect
+
+ — 9:37 PM
+
+alright im very close to being done with the site
+
+puting the last touches on now
+
+finished 
