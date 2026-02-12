@@ -18,6 +18,101 @@
             //MAGIC
             const canvas = document.getElementById("canvas");
             const ctx = canvas.getContext("2d");
+
+            //Head
+            ctx.beginPath();
+            ctx.arc(700,300,125,0,2*Math.PI);
+            ctx.fillStyle = "tan";
+            ctx.fill();
+            ctx.stroke();
+            //Eye 1
+            ctx.beginPath();
+            ctx.arc(650,275,25,0,2*Math.PI);
+            ctx.fillStyle = "white";
+            ctx.fill();
+            ctx.stroke();
+            //Eye 2
+            ctx.beginPath();
+            ctx.arc(750,275,25,0,2*Math.PI);
+            ctx.fillStyle = "white";
+            ctx.fill();
+            ctx.stroke();
+            //Pupil 1
+            ctx.beginPath();
+            ctx.arc(650,275,10,0,2*Math.PI);
+            ctx.fillStyle = "blue";
+            ctx.fill();
+            ctx.stroke();
+            //Pupil 2
+            ctx.beginPath();
+            ctx.arc(750,275,10,0,2*Math.PI);
+            ctx.fillStyle = "blue";
+            ctx.fill();
+            ctx.stroke();
+            //Nose
+            ctx.beginPath();
+            ctx.moveTo(700,250);
+            ctx.lineTo(675,325);
+            ctx.lineTo(725,325);
+            ctx.fillStyle = "tan";
+            ctx.fill();
+            ctx.stroke();
+            //Mouth
+            ctx.beginPath();
+            ctx.arc(700,350,50,0,Math.PI);
+            ctx.fillStyle = "red";
+            ctx.fill();
+            ctx.stroke();
+            //Glasses
+            ctx.beginPath();
+            ctx.rect(623,250,55,50);
+            ctx.rect(723,250,55,50);
+            ctx.moveTo(675,275);
+            ctx.lineTo(725,275);
+            ctx.stroke();
+            //Ears
+            ctx.beginPath();
+            ctx.arc(575,300,25,0,2*Math.PI);
+            ctx.fillStyle = "tan";
+            ctx.fill();
+            ctx.stroke();
+            ctx.beginPath();
+            ctx.arc(825,300,25,0,2*Math.PI);
+            ctx.fillStyle = "tan";
+            ctx.fill();
+            ctx.stroke();
+            //Hair
+            ctx.beginPath();
+            ctx.arc(700,175,75,0,Math.PI, true);
+            ctx.fillStyle = "brown";
+            ctx.fill();
+            ctx.stroke();
+            ctx.beginPath();
+            ctx.arc(600,175,75,2,2*Math.PI,);
+            ctx.fillStyle = "brown";
+            ctx.fill();
+            ctx.stroke();
+            ctx.beginPath();
+            ctx.arc(800,175,75,-5,Math.PI, true);
+            ctx.fillStyle = "brown";
+            ctx.fill();
+            ctx.stroke();
+            //Neck
+            ctx.beginPath();
+            ctx.rect(675,425,50,75);
+            ctx.fillStyle = "tan";
+            ctx.fill();
+            ctx.stroke();
+            //Shoulders with arms
+            ctx.beginPath();
+            ctx.moveTo(625,500);
+            ctx.lineTo(775,500);
+            ctx.lineTo(825,600);
+            ctx.lineTo(575,600);
+            ctx.lineTo(625,500);
+            ctx.fillStyle = "blue";
+            ctx.fill();
+            ctx.stroke();
         </script>
     </body>
 </html>
