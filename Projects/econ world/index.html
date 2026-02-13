@@ -1,36 +1,354 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Checkout Soulland!</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Soulland!</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+            border-radius: 10px;
+            margin-bottom: 40px;
+        }
+
+        .hero h1 {
+            font-size: 3.5em;
+            margin: 0 0 20px 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 1.3em;
+            margin: 0;
+            opacity: 0.95;
+        }
+
+        .content-showcase {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            margin-bottom: 60px;
+        }
+
+        .showcase-text h2 {
+            font-size: 2.2em;
+            color: #2c3e50;
+            margin-top: 0;
+        }
+
+        .showcase-text p {
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: #34495e;
+            margin-bottom: 20px;
+        }
+
+        .showcase-image {
+            display: flex;
+            justify-content: center;
+        }
+
+        .showcase-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            transition: transform 0.3s ease;
+        }
+
+        .showcase-image img:hover {
+            transform: scale(1.05);
+        }
+
+        .flag-container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .flag-container img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 30px;
+            margin: 60px 0;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-top: 4px solid #667eea;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .feature-card h3 {
+            color: #667eea;
+            font-size: 1.5em;
+            margin-top: 0;
+        }
+
+        .feature-card p {
+            color: #7f8c8d;
+            line-height: 1.6;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 30px;
+            border-radius: 10px;
+            text-align: center;
+            margin: 60px 0;
+        }
+
+        .cta-section h2 {
+            font-size: 2.2em;
+            margin: 0 0 20px 0;
+        }
+
+        .cta-section p {
+            font-size: 1.2em;
+            margin: 0 0 30px 0;
+            opacity: 0.95;
+        }
+
+        .nav-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .nav-link-btn {
+            background: white;
+            color: #667eea;
+            padding: 15px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            text-align: center;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .nav-link-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+
+        .statistics {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            margin: 40px 0;
+            border: 2px solid #ecf0f1;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .stat-box {
+            text-align: center;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+
+        .stat-number {
+            font-size: 2.5em;
+            color: #667eea;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        .stat-label {
+            color: #7f8c8d;
+            margin: 10px 0 0 0;
+            font-size: 0.95em;
+        }
+
+        @media (max-width: 1024px) {
+            .content-showcase {
+                grid-template-columns: 1fr;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .hero h1 {
+                font-size: 2.5em;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                padding: 50px 20px;
+            }
+
+            .hero h1 {
+                font-size: 2em;
+            }
+        }
+    </style>
 </head>
 <body>
     <header class="banner">
         <nav>
             <a href="index.html">Home</a>
-            <a href="autobiography.html">Autobiography</a>
             <a href="background.html">Background</a>
             <a href="citizens.html">Citizens</a>
-            <a href="general.html">General Info</a>
+            <a href="economy.html">Economy</a>
+            <a href="economic analysis.html">Economic Analysis</a>
             <a href="map.html">Map</a>
-            <a href="index.html">Index</a>
         </nav>
     </header>
 
     <section class="main">
-        <figure class="overview">
-            <figcaption><h1>Welcome to Soulland!</h1></figcaption>
-        </figure>
+        <div class="hero">
+            <h1>Welcome to Soulland!</h1>
+            <p>Discover a unique nation where three cultures thrive in harmony</p>
+        </div>
 
-        <div class="content-row">
-            <p>
-                We are the country of Soulland. Our flag beside this has been designed to represent the 3 major cultures of our civilization. The human representing the "Normies", the pawprint representing the Pacifists and their love for animals, and the 2 hearts representing the enlargened souls of the "Vivacious". We are a country similat to Canada in that everyone here is 
-            </p>
-            <div class="img-container">
-                <img src="images/flag.png" alt="The flag of Soulland">
+        <div class="content-showcase">
+            <div class="showcase-text">
+                <h2>About Soulland</h2>
+                <p>
+                    Soulland is a distinctive island nation built on the principles of hybrid capitalism and communal values. Our society is home to three unique populations: the Normies who excel in administration, the Pacifists who nurture our agricultural heritage, and the Vivacious—our naturally gifted leaders born with complete knowledge.
+                </p>
+                <p>
+                    We are a country similar to Canada in many ways: we embrace mixed-economy principles, celebrate multiculturalism, maintain strong social values, and rely on our abundant natural resources. However, what truly makes Soulland unique is our diverse populations, our innovative economy, and our commitment to resource sharing across all social classes.
+                </p>
+                <p>
+                    Our flag represents our three cultures: the human figure symbolizes the Normies, the pawprint honors the Pacifists' love for animals and nature, and the two hearts represent the enlarged souls of the Vivacious who lead our nation.
+                </p>
+            </div>
+            <div class="showcase-image">
+                <div class="flag-container">
+                    <h3 style="color: #2c3e50;">The Flag of Soulland</h3>
+                    <img src="images/flag.png" alt="The flag of Soulland depicting three cultures">
+                    <p style="color: #7f8c8d; font-size: 0.95em;">Three cultures united under one nation</p>
+                </div>
             </div>
         </div>
+
+        <div class="statistics">
+            <h2 style="color: #2c3e50; margin-top: 0;">Soulland at a Glance</h2>
+            <div class="stats-grid">
+                <div class="stat-box">
+                    <p class="stat-number">100K</p>
+                    <p class="stat-label">Population</p>
+                </div>
+                <div class="stat-box">
+                    <p class="stat-number">$2.4B</p>
+                    <p class="stat-label">Annual GDP</p>
+                </div>
+                <div class="stat-box">
+                    <p class="stat-number">3</p>
+                    <p class="stat-label">Unique Cultures</p>
+                </div>
+                <div class="stat-box">
+                    <p class="stat-number">95%</p>
+                    <p class="stat-label">Employment Rate</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <h3>Three Unique Populations</h3>
+                <p>The Normies bring administrative excellence, Pacifists provide agricultural expertise, and the Vivacious lead our nation with innate superiority and complete knowledge.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>Mixed Economy</h3>
+                <p>Soulland combines capitalist market mechanisms with communist social values, creating a balanced system where citizens work for income but freely share resources with their community.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>Rich Natural Resources</h3>
+                <p>From copper and iron mines to wheat fields and rare fish, Soulland's natural wealth drives our economy and supports international trade relationships.</p>
+            </div>
+
+
+            <div class="feature-card">
+                <h3>Global Export Leader</h3>
+                <p>We export mining products, agricultural goods, rare fish, and most notably, our Vivacious talent—providing military and governmental services worth $1.2 billion annually.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>Sustainable Future</h3>
+                <p>Through reforestation campaigns, resource management policies, and immigration initiatives, Soulland works toward long-term environmental and economic sustainability.</p>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <h2>Explore Soulland</h2>
+            <p>Learn more about our unique economy, diverse citizens, and geographic regions</p>
+            <div class="nav-links">
+                <a href="background.html" class="nav-link-btn">Background</a>
+                <a href="citizens.html" class="nav-link-btn">Citizens</a>
+                <a href="economy.html" class="nav-link-btn">Economy</a>
+                <a href="economic analysis.html" class="nav-link-btn">Economic Analysis</a>
+                <a href="map.html" class="nav-link-btn">Map</a>
+            </div>
+        </div>
+
+        <div style="background: #e8f4f8; padding: 30px; border-radius: 10px; margin: 40px 0; border-left: 4px solid #3498db;">
+            <h2 style="color: #2c3e50; margin-top: 0;">Key Economic Facts</h2>
+            <ul style="font-size: 1.05em; line-height: 1.8; color: #34495e;">
+                <li><strong>GDP Per Capita:</strong> $24,000 USD - Upper-middle income nation</li>
+                <li><strong>Major Exports:</strong> Vivacious services ($1.2B), copper, rare fish, silver, wheat</li>
+                <li><strong>Trade Surplus:</strong> Approximately $1.4 billion annually</li>
+                <li><strong>Primary Industries:</strong> Mining (20% GDP), Agriculture (12% GDP), Government Services (35% GDP)</li>
+                <li><strong>Employment:</strong> Nearly full employment across all three populations</li>
+                <li><strong>Technology:</strong> Heavy investment in technology for productivity</li>
+                <li><strong>Immigration:</strong> Currently limited; campaigns underway to attract skilled workers</li>
+                <li><strong>Environmental Focus:</strong> Forest preservation and reforestation are critical priorities</li>
+            </ul>
+        </div>
     </section>
+
+    <footer style="text-align: center; padding: 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; margin-top: 40px;">
+        <p>&copy; 2026 Soulland Country Project | By Adrian Cool</p>
+        <p><small>A unique nation combining capitalism with communal values, home to three distinct populations working toward shared prosperity</small></p>
+    </footer>
 </body>
 </html>

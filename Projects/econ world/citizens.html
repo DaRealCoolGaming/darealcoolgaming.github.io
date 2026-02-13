@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Citizens - Soulland</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .section-title {
+            color: #2c3e50;
+            border-bottom: 3px solid #9b59b6;
+            padding-bottom: 10px;
+            margin-top: 30px;
+            margin-bottom: 20px;
+        }
+        
+        .content-box {
+            background: #f5eef8;
+            padding: 20px;
+            border-left: 4px solid #9b59b6;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+        
+        .race-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+        
+        .race-card {
+            background: white;
+            border: 3px solid #9b59b6;
+            border-radius: 10px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .race-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .race-card h2 {
+            color: #9b59b6;
+            margin-top: 0;
+            font-size: 1.8em;
+        }
+        
+        .race-icon {
+            font-size: 4em;
+            margin: 20px 0;
+        }
+        
+        .race-details {
+            text-align: left;
+        }
+        
+        .race-details h3 {
+            color: #9b59b6;
+            border-bottom: 2px solid #9b59b6;
+            padding-bottom: 8px;
+            margin-top: 15px;
+        }
+        
+        .detail-list {
+            list-style: none;
+            padding: 0;
+            font-size: 0.95em;
+        }
+        
+        .detail-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid #ecf0f1;
+        }
+        
+        .detail-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .detail-list strong {
+            color: #9b59b6;
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            margin-top: 20px;
+        }
+        
+        .comparison-table th,
+        .comparison-table td {
+            border: 1px solid #bdc3c7;
+            padding: 15px;
+            text-align: left;
+        }
+        
+        .comparison-table th {
+            background: #9b59b6;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .comparison-table tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+        
+        @media (max-width: 1024px) {
+            .race-container {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .race-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="banner">
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="background.html">Background</a>
+            <a href="citizens.html">Citizens</a>
+            <a href="economy.html">Economy</a>
+            <a href="economic analysis.html">Economic Analysis</a>
+            <a href="map.html">Map</a>
+        </nav>
+    </header>
+
+    <section class="main">
+        <h1 style="text-align: center; color: #2c3e50;">The Citizens of Soulland</h1>
+        
+        <div class="content-box">
+            <p style="text-align: center; font-size: 1.1em;">
+                Soulland is home to three distinct populations, each with unique characteristics, appearances, and roles within society. The flag of Soulland is designed to represent these three cultures: the human representing the Normies, the pawprint representing the Pacifists, and the two hearts representing the Vivacious.
+            </p>
+        </div>
+
+        <div class="race-container">
+            <div class="race-card">
+                <h2>The Normies</h2>
+                <div class="race-icon"></div>
+                
+                <div class="race-details">
+                    <h3>Physical Appearance</h3>
+                    <ul class="detail-list">
+                        <li><strong>Features:</strong> Normal human-like features</li>
+                        <li><strong>Build:</strong> Average, varied body types</li>
+                        <li><strong>Clothing:</strong> Professional attire, business casual</li>
+                        <li><strong>Hair:</strong> Full head of hair, conventionally styled</li>
+                        <li><strong>Ethnicity:</strong> Varied, diverse representations</li>
+                        <li><strong>Appearance Age:</strong> Adults appear their actual age</li>
+                    </ul>
+                    
+                    <h3>Primary Role</h3>
+                    <ul class="detail-list">
+                        <li><strong>Occupation:</strong> Office workers, administrators</li>
+                        <li><strong>Status:</strong> Middle class</li>
+                        <li><strong>Government:</strong> Mid-level bureaucracy</li>
+                        <li><strong>Skills:</strong> Organization, detail-orientation</li>
+                    </ul>
+                    
+                    <h3>Characteristics</h3>
+                    <ul class="detail-list">
+                        <li>Reliable and dependable</li>
+                        <li>Detail-oriented workers</li>
+                        <li>Community-focused</li>
+                        <li>Share resources freely</li>
+                    </ul>
+                </div>
+            </div>
+
+
+            <div class="race-card">
+                <h2>The Pacifists</h2>
+                <div class="race-icon"></div>
+                
+                <div class="race-details">
+                    <h3>Physical Appearance</h3>
+                    <ul class="detail-list">
+                        <li><strong>Head:</strong> Completely bald, smooth scalp</li>
+                        <li><strong>Features:</strong> Bookish, intellectual appearance</li>
+                        <li><strong>Eyes:</strong> Often wear glasses or spectacles</li>
+                        <li><strong>Build:</strong> Slender, lean physiques</li>
+                        <li><strong>Clothing:</strong> Scholarly robes, academic wear</li>
+                        <li><strong>Demeanor:</strong> Peaceful, thoughtful expression</li>
+                    </ul>
+                    
+                    <h3>Primary Role</h3>
+                    <ul class="detail-list">
+                        <li><strong>Occupation:</strong> Farmers, agricultural workers</li>
+                        <li><strong>Status:</strong> Working class, essential workers</li>
+                        <li><strong>Specialization:</strong> Crop cultivation, livestock care</li>
+                        <li><strong>Values:</strong> Animal welfare, environmental stewardship</li>
+                    </ul>
+                    
+                    <h3>Characteristics</h3>
+                    <ul class="detail-list">
+                        <li>Peaceful and non-violent</li>
+                        <li>Deep knowledge of nature</li>
+                        <li>Strong animal welfare values</li>
+                        <li>Hard-working and dedicated</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="race-card">
+                <h2>The Vivacious</h2>
+                <div class="race-icon"></div>
+                
+                <div class="race-details">
+                    <h3>Physical Appearance</h3>
+                    <ul class="detail-list">
+                        <li><strong>Age Appearance:</strong> Look like teenagers</li>
+                        <li><strong>Clothing:</strong> Street-style, baggy clothing</li>
+                        <li><strong>Fashion:</strong> Oversized hoodies, cargo pants</li>
+                        <li><strong>Footwear:</strong> Trendy sneakers, street shoes</li>
+                        <li><strong>Accessories:</strong> Trendy, contemporary items</li>
+                        <li><strong>Demeanor:</strong> Energetic, charismatic presence</li>
+                    </ul>
+                    
+                    <h3>Primary Role</h3>
+                    <ul class="detail-list">
+                        <li><strong>Position:</strong> Government leaders, elite class</li>
+                        <li><strong>Authority:</strong> Make all major decisions</li>
+                        <li><strong>Military:</strong> Can be rented to other nations</li>
+                        <li><strong>Status:</strong> Upper class, born superior</li>
+                    </ul>
+                    
+                    <h3>Characteristics</h3>
+                    <ul class="detail-list">
+                        <li>Born with complete knowledge</li>
+                        <li>Naturally talented at everything</li>
+                        <li>Fast workers and efficient</li>
+                        <li>Ambitious and charismatic</li>
+                        <li>Natural leaders</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-box">
+            <h2 class="section-title">Comparative Analysis of Soulland's Three Populations</h2>
+            <div style="overflow-x: auto;">
+                <table class="comparison-table">
+                    <tr>
+                        <th>Aspect</th>
+                        <th>The Normies</th>
+                        <th>The Pacifists</th>
+                        <th>The Vivacious</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Distinctive Feature</strong></td>
+                        <td>Normal human appearance</td>
+                        <td>Completely bald with glasses</td>
+                        <td>Teen-like with baggy street wear</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Population Percentage</strong></td>
+                        <td>~40%</td>
+                        <td>~35%</td>
+                        <td>~25% (Elite minority)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Primary Sector</strong></td>
+                        <td>Government, Administration</td>
+                        <td>Agriculture, Environment</td>
+                        <td>Leadership, Military, Services</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Economic Class</strong></td>
+                        <td>Middle Class</td>
+                        <td>Working Class</td>
+                        <td>Upper Class/Elite</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Education Level</strong></td>
+                        <td>Secondary/Tertiary</td>
+                        <td>Specialized Agricultural</td>
+                        <td>Born with complete knowledge</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Key Skills</strong></td>
+                        <td>Organization, Planning, Administration</td>
+                        <td>Cultivation, Animal Care, Sustainability</td>
+                        <td>Leadership, Problem-solving, All skills</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Work Ethic</strong></td>
+                        <td>Reliable, steady</td>
+                        <td>Dedicated, passionate</td>
+                        <td>Efficient, fast, excellence-driven</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Social Values</strong></td>
+                        <td>Community sharing, cooperation</td>
+                        <td>Environmental stewardship, animal welfare</td>
+                        <td>Natural superiority, leadership responsibility</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Resource Sharing</strong></td>
+                        <td>Yes - willing to share freely</td>
+                        <td>Yes - community-oriented</td>
+                        <td>Yes - lead by example for nation</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Income Generation</strong></td>
+                        <td>Salaries from government jobs</td>
+                        <td>Agricultural product sales, farming income</td>
+                        <td>Government positions + Rental contracts ($1.2B/year)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Future Outlook</strong></td>
+                        <td>Stable, growing with immigration</td>
+                        <td>At risk due to forest depletion</td>
+                        <td>High demand, export growth</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="content-box">
+            <h2 class="section-title">Population Dynamics & Social Structure</h2>
+            <p><strong>Total Estimated Population:</strong> ~100,000 citizens</p>
+            
+            <h3 style="color: #9b59b6;">Population Distribution</h3>
+            <ul>
+                <li><strong>Normies:</strong> ~40,000 (40%) - Administrative and office workforce</li>
+                <li><strong>Pacifists:</strong> ~35,000 (35%) - Agricultural and environmental workers</li>
+                <li><strong>Vivacious:</strong> ~25,000 (25%) - Elite leadership and specialized services</li>
+            </ul>
+
+            <h3 style="color: #9b59b6;">Immigration & Growth Patterns</h3>
+            <ul>
+                <li>Current immigration rate: ~20 new residents per 4 months (~60 per year)</li>
+                <li>Population growth: Slightly negative (-0.2% annually)</li>
+                <li>Immigration target: Increase through propaganda campaigns highlighting Vivacious superiority</li>
+                <li>Desired demographics: More working-age Pacifists to address agricultural needs</li>
+            </ul>
+
+            <h3 style="color: #9b59b6;">Social Integration & Values</h3>
+            <p>Despite their differences, all three populations share a common set of values that define Soulland's hybrid capitalist-communist economy:</p>
+            <ul>
+                <li>✓ <strong>Resource Sharing:</strong> All groups willing to share possessions and resources freely</li>
+                <li>✓ <strong>Work for Income:</strong> All participate in wage-earning employment</li>
+                <li>✓ <strong>Community Welfare:</strong> Emphasis on collective good over individual accumulation</li>
+                <li>✓ <strong>Specialization:</strong> Each group naturally excels in their designated role</li>
+                <li>✓ <strong>Mutual Respect:</strong> Recognition of each group's essential contribution to society</li>
+            </ul>
+        </div>
+    </section>
+
+    <footer style="text-align: center; padding: 20px; background: #9b59b6; color: white; margin-top: 40px;">
+        <p>&copy; 2026 Soulland Citizen Overview | By Adrian Cool</p>
+    </footer>
+</body>
+</html>
