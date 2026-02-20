@@ -13,34 +13,108 @@ body {
   color: white;
   font-family: monospace;
   text-align: center;
-  padding-top: 100px;
+  padding-top: 20px;
+  margin: 0;
+  overflow: hidden;
 }
 button {
   font-size: 20px;
   padding: 15px 30px;
+  margin-bottom: 10px;
+}
+canvas {
+  display: block;
+  margin: 0 auto;
+  background: black;
 }
 </style>
 </head>
 <body>
 
 <button id="startButton">Play Megalovania (Synth Engine)</button>
+<canvas id="sansCanvas" width="400" height="400"></canvas>
 
 <script>
+const canvas = document.getElementById("sansCanvas");
+const ctx = canvas.getContext("2d");
 
+let swayAngle = 0;
+let swayDirection = 1;
+
+// Draw a simple stylized Sans
+function drawSans() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  const centerX = canvas.width / 2;
+  const centerY = canvas.height / 2 + 50;
+
+  // Body sway offset
+  const swayX = Math.sin(swayAngle) * 10;
+
+  // Legs
+  ctx.strokeStyle = "white";
+  ctx.lineWidth = 4;
+  ctx.beginPath();
+  ctx.moveTo(centerX - 10 + swayX, centerY + 50);
+  ctx.lineTo(centerX - 10 + swayX, centerY + 120);
+  ctx.moveTo(centerX + 10 + swayX, centerY + 50);
+  ctx.lineTo(centerX + 10 + swayX, centerY + 120);
+  ctx.stroke();
+
+  // Body
+  ctx.beginPath();
+  ctx.moveTo(centerX + swayX, centerY + 50);
+  ctx.lineTo(centerX + swayX, centerY);
+  ctx.stroke();
+
+  // Arms
+  ctx.beginPath();
+  ctx.moveTo(centerX + swayX, centerY + 10);
+  ctx.lineTo(centerX - 30 + swayX, centerY + 30);
+  ctx.moveTo(centerX + swayX, centerY + 10);
+  ctx.lineTo(centerX + 30 + swayX, centerY + 30);
+  ctx.stroke();
+
+  // Head
+  ctx.beginPath();
+  ctx.arc(centerX + swayX, centerY - 20, 20, 0, Math.PI * 2);
+  ctx.stroke();
+
+  // Eyes
+  ctx.fillStyle = "white";
+  ctx.beginPath();
+  ctx.arc(centerX - 7 + swayX, centerY - 22, 3, 0, Math.PI * 2);
+  ctx.arc(centerX + 7 + swayX, centerY - 22, 3, 0, Math.PI * 2);
+  ctx.fill();
+
+  // Smile
+  ctx.beginPath();
+  ctx.moveTo(centerX - 8 + swayX, centerY - 10);
+  ctx.quadraticCurveTo(centerX + swayX, centerY - 5, centerX + 8 + swayX, centerY - 10);
+  ctx.stroke();
+}
+
+// Animate sway
+function animate() {
+  swayAngle += 0.05;
+  drawSans();
+  requestAnimationFrame(animate);
+}
+
+animate();
+
+// Music Playback
 document.getElementById("startButton").addEventListener("click", async () => {
-
   const button = document.getElementById("startButton");
   button.disabled = true;
   button.innerText = "Starting...";
 
   await Tone.start();
 
-  // Load MIDI
   const response = await fetch("UNDERTALE - MEGALOVANIA.mid");
   const arrayBuffer = await response.arrayBuffer();
   const midi = new Midi(arrayBuffer);
 
-  // Set tempo
   Tone.Transport.bpm.value = midi.header.tempos.length > 0
     ? midi.header.tempos[0].bpm
     : 120;
@@ -48,134 +122,66 @@ document.getElementById("startButton").addEventListener("click", async () => {
   const reverb = new Tone.Reverb({ decay: 1.5, wet: 0.2 }).toDestination();
 
   function createInstrument(program, channel) {
-
-    // Channel 10 = Drums
-    if (channel === 9) {
+    if (channel === 9) { // Drums
       return new Tone.MembraneSynth({
         pitchDecay: 0.01,
         octaves: 5,
-        envelope: {
-          attack: 0.001,
-          decay: 0.4,
-          sustain: 0
-        }
+        envelope: { attack: 0.001, decay: 0.4, sustain: 0 }
       }).toDestination();
     }
-
-    // GM program categories
-
-    // Distortion / Overdriven Guitar (29–30)
-    if (program === 29 || program === 30) {
+    if (program === 29 || program === 30) { // Guitar
       return new Tone.PolySynth(Tone.Synth, {
         oscillator: { type: "square" },
-        envelope: {
-          attack: 0.001,
-          decay: 0.1,
-          sustain: 0.6,
-          release: 0.2
-        }
+        envelope: { attack: 0.001, decay: 0.1, sustain: 0.6, release: 0.2 }
       }).connect(reverb);
     }
-
-    // Lead 1 (Square)
-    if (program === 80) {
+    if (program === 80) { // Lead 1
       return new Tone.PolySynth(Tone.Synth, {
         oscillator: { type: "square" },
-        envelope: {
-          attack: 0.001,
-          decay: 0.05,
-          sustain: 0.5,
-          release: 0.1
-        }
+        envelope: { attack: 0.001, decay: 0.05, sustain: 0.5, release: 0.1 }
       }).connect(reverb);
     }
-
-    // Lead 2 (Saw)
-    if (program === 81) {
+    if (program === 81) { // Lead 2
       return new Tone.PolySynth(Tone.Synth, {
         oscillator: { type: "sawtooth" },
-        envelope: {
-          attack: 0.001,
-          decay: 0.05,
-          sustain: 0.5,
-          release: 0.1
-        }
+        envelope: { attack: 0.001, decay: 0.05, sustain: 0.5, release: 0.1 }
       }).connect(reverb);
     }
-
-    // Strings / Organs (16–23, 48–55)
-    if (
-      (program >= 16 && program <= 23) ||
-      (program >= 48 && program <= 55)
-    ) {
+    if ((program >= 16 && program <= 23) || (program >= 48 && program <= 55)) { // Strings/Organs
       return new Tone.PolySynth(Tone.Synth, {
         oscillator: { type: "square" },
-        envelope: {
-          attack: 0.02,
-          decay: 0.2,
-          sustain: 0.7,
-          release: 1.2
-        }
+        envelope: { attack: 0.02, decay: 0.2, sustain: 0.7, release: 1.2 }
       }).connect(reverb);
     }
-
-    // Bass (32–39)
-    if (program >= 32 && program <= 39) {
+    if (program >= 32 && program <= 39) { // Bass
       return new Tone.MonoSynth({
         oscillator: { type: "square" },
         filter: { Q: 2, type: "lowpass", rolloff: -24 },
-        envelope: {
-          attack: 0.01,
-          decay: 0.2,
-          sustain: 0.4,
-          release: 0.2
-        }
+        envelope: { attack: 0.01, decay: 0.2, sustain: 0.4, release: 0.2 }
       }).toDestination();
     }
-
-    // Default fallback = square synth
-    return new Tone.PolySynth(Tone.Synth, {
-      oscillator: { type: "square" }
-    }).connect(reverb);
+    return new Tone.PolySynth(Tone.Synth, { oscillator: { type: "square" } }).connect(reverb);
   }
 
   const instrumentCache = {};
 
   midi.tracks.forEach(track => {
-
     const channel = track.channel;
     const program = track.instrument.number;
-
     const key = `${channel}-${program}`;
-
-    if (!instrumentCache[key]) {
-      instrumentCache[key] = createInstrument(program, channel);
-    }
-
+    if (!instrumentCache[key]) instrumentCache[key] = createInstrument(program, channel);
     const instrument = instrumentCache[key];
 
     track.notes.forEach(note => {
-
       Tone.Transport.schedule(time => {
-
-        instrument.triggerAttackRelease(
-          note.name,
-          note.duration,
-          time,
-          note.velocity
-        );
-
+        instrument.triggerAttackRelease(note.name, note.duration, time, note.velocity);
       }, note.time);
-
     });
-
   });
 
   Tone.Transport.start();
   button.innerText = "Playing";
-
 });
-
 </script>
 
 </body>
