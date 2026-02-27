@@ -1,39 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>Animation</title>
-        <style>
-            #container {
-    width: 500px;
-    height: 300px;
-    position: relative;
-    background-color: #eee;
-    overflow: hidden;
+<head>
+<meta charset="UTF-8">
+<title>Gif Animation</title>
+
+<style>
+    body {
+        background-color: white;
+    }
+
+    #container {
+        width: 600px;
+        height: 300px;
+        position: relative;
+        background-color: #eee;
+        overflow: hidden;
+        margin: 50px auto;
+    }
+
+    #movingGif {
+        position: absolute;
+        left: 0px;
+        top: 100px;
+        width: 120px;
+        height: auto;
+    }
+
+    #movingGif2 {
+        position: absolute;
+        left: 520px;
+        top: 100px;
+        width: 80px;
+        height: auto;
+    }
+
+    #box {
+        position: absolute;
+        top: 20px;
+        left: 150px;
+        width: 300px;
+        display: none;
+    }
+</style>
+</head>
+<body>
+
+<div id="container">
+    <img id="movingGif" src="sr269fdea68191c.gif" alt="Kris">
+    <img id="movingGif2" src="susie-deltarune.gif" alt="Susie">
+    <img id="box" src="box.png" alt="Box">
+</div>
+
+<script>
+const movingGif = document.getElementById("movingGif");
+const movingGif2 = document.getElementById("movingGif2");
+const box = document.getElementById("box");
+
+let speed = 2;
+let stopped = false;
+
+function animate() {
+
+    if (!stopped) {
+
+
+        movingGif.style.left =
+            movingGif.offsetLeft + speed + "px";
+
+
+        movingGif2.style.left =
+            movingGif2.offsetLeft - speed + "px";
+
+
+
+            
+        const rect1 = movingGif.getBoundingClientRect();
+        const rect2 = movingGif2.getBoundingClientRect();
+
+        if (rect1.right >= rect2.left) {
+        stopped = true;
+
+        movingGif2.src = "sus.webp";
+
+        movingGif2.style.width = "140px"; 
 }
 
-#movingGif {
-    position: absolute; 
-    left: 0px;
-    top: 100px;
-    width: auto; 
-    height: auto;
+            box.style.display = "block";
+
+    }
+
+    requestAnimationFrame(animate);
 }
-        </style>
-    </head>
-    <body>
-<div id="container">
-    <img id="movingGif" src="susie-deltarune.gif" alt="Susie">
-</div>
-<div id="container2">
-    <img id="movingGif" src="sr269fdea68191c.gif" alt="Kris">
-</div>
-        <canvas id="myCanvas" width = 800 height = 800></canvas>
-        <script>
-            console.log('hi');
-            const canvas = document
-            .getElementById("myCanvas");
-            const ctx = canvas.getContext("2d");
-            
-            </script>
-    </body>
+
+animate();
+</script>
+
+</body>
 </html>
