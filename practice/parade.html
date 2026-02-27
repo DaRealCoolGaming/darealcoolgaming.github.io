@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Animation</title>
+        <style>
+            #container {
+    width: 500px;
+    height: 300px;
+    position: relative;
+    background-color: #eee;
+    overflow: hidden;
+}
+
+#movingGif {
+    position: absolute; 
+    left: 0px;
+    top: 100px;
+    width: auto; 
+    height: auto;
+}
+        </style>
+    </head>
+    <body>
+<div id="container">
+    <img id="movingGif" src="susie-deltarune.gif" alt="Susie">
+</div>
+<div id="container2">
+    <img id="movingGif" src="sr269fdea68191c.gif" alt="Kris">
+</div>
+        <canvas id="myCanvas" width = 800 height = 800></canvas>
+        <script>
+            console.log('hi');
+            const canvas = document
+            .getElementById("myCanvas");
+            const ctx = canvas.getContext("2d");
+            
+            </script>
+    </body>
+</html>
