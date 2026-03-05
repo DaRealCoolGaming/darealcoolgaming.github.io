@@ -91,8 +91,8 @@ flowchart TD;
     M --> N(Ancient Deku Tree) 
     N --> |Find Roc's Feather| O(Boss Room)
     O --> P(Defeat Ghoma)
-    P --> F
-    F --> Z(Finish)
+    P --> G
+    G --> Z(Finish)
     K --> I
     L --> I
 ```
