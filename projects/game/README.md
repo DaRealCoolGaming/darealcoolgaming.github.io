@@ -93,4 +93,6 @@ flowchart TD;
     O --> P(Defeat Ghoma)
     P --> F
     F --> Z(Finish)
+    K --> I
+    L --> I
 ```
