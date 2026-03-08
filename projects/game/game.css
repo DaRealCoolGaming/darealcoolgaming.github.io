@@ -2,6 +2,10 @@ body {
     margin: 0;
     padding: 20px;
     background-color: #1e1e1e;
+    background-image: url('background.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
     font-family: 'Courier New', monospace;
     color: #00ff00;
     height: 100vh;
@@ -20,7 +24,7 @@ h1{
 
 #terminal {
     height: 80%;
-    display: flex;
+    display: none; /* hidden until the Start thing is pressed */
     flex-direction: column;
     max-width: 80%;
     margin: 0 auto;
@@ -72,3 +76,53 @@ h1{
     line-height: 1.2;
     font-size: 12px;
 }
+
+/* styles */
+#start-screen{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: flex-start; /* put it at the top */
+    justify-content: center;
+    background: rgba(0,0,0,0.6);
+    z-index: 1000;
+    padding-top: 12px;
+}
+#start-box{
+    background: rgba(7,17,7,0.85); /* slightly transparent so the background image thingy shows through */
+    border: 2px solid #00ff00;
+    padding: 12px 20px;
+    text-align: left;
+    color: #e8ffe8;
+    font-family: 'Courier New', monospace;
+    max-width: 720px;
+}
+#start-btn{
+    margin-top: 12px;
+    padding: 10px 20px;
+    background: #00ff00;
+    border: none;
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.title-art{
+    color: #ccffcc;
+    font-family: 'Courier New', 'Lucida Console', 'DejaVu Sans Mono', Monaco, monospace;
+    font-style: normal; /* avoid any italicization */
+    font-weight: 700; /* make blocks solid */
+    font-size: 13px;
+    line-height: 1; /* one line per ASCII row */
+    letter-spacing: 0; /* keep ascii aligned */
+    margin: 6px 0 10px 0;
+    white-space: pre; /* preserve stuff */
+    -webkit-font-smoothing: none; /* avoid italics look */
+    -moz-osx-font-smoothing: grayscale;
+    text-shadow: none;
+    display: block;
+}
+#start-btn:hover{ opacity: 0.9; }
