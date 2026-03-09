@@ -120,9 +120,6 @@ h1{
     letter-spacing: 0; /* keep ascii aligned */
     margin: 6px 0 10px 0;
     white-space: pre; /* preserve stuff */
-    -webkit-font-smoothing: none; /* avoid italics look */
-    -moz-osx-font-smoothing: grayscale;
-    text-shadow: none;
     display: block;
 }
 #start-btn:hover{ opacity: 0.9; }

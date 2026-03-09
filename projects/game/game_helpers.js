@@ -54,7 +54,7 @@ function waitForInput(handlerFunction){
 }
 
 function waitThenCall(target){
-    // dont advance until procceed it ran
+    // dont advance until procceed is ran
     waitForInput(function(input){
         if (input && input.trim().toLowerCase() === 'proceed'){
             // resume to the requested target

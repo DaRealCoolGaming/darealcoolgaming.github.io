@@ -1,76 +1,76 @@
 # Checklist
 
-Code the text based adventure
+Code the text based adventure •
 
-2-3 endings
+2-3 endings •
 
-background music
+background music •
 
-battle music
+battle music •
 
 ## game specific:
 
-Explain the background for oot and mm
+Explain the background for oot and mm X (Assume knowledge)
 
-explain why link is where he is
+explain why link is where he is •
 
-the story will be based off the indigo romhack
+the story will be based off the indigo romhack •
 
 ## timeline
 
-Exit house
+Exit house •
 
-Pick up sticks
+Pick up sticks •
 
-Enter cave
+Enter cave •
 
-Exit cave 
+Exit cave •
 
-Enter kokiri house 2 (3 houses total including shop) 
+Enter kokiri house 2 (3 houses total including shop) •
 
-Talk to Falo
+Talk to Falo •
 
-Exit kokiri house 2
+Exit kokiri house 2 •
 
-enter forest
+enter forest •
 
-enter crypt
+enter crypt •
 
-option 1: kill the kokiri warrior and take the sword (bad ending start)
+option 1: kill the kokiri warrior and take the sword (bad ending start) •
 
-option 2: spare the kokiri warrior and take the sword (good ending start)
+option 2: spare the kokiri warrior and take the sword (good ending start) •
 
-exit crypt
+exit crypt •
 
-exit forest
+exit forest •
 
-enter mini forest 
+enter mini forest •
 
-enter ancient deku tree 
+enter ancient deku tree •
 
-find roc's feather
+find roc's feather •
 
-defeat ancient ghoma
+defeat ancient ghoma •
 
-exit the ancient deku tree
+exit the ancient deku tree •
 
-exit mini forest 
+exit mini forest •
 
-enter kokiri house 2
+enter kokiri house 2 •
 
-talk to Falo
+talk to Falo •
 
-obtain forest's blessing
+obtain forest's blessing X (Information makes more sense)
 
-Fini
+Fini •
 
 ## Bad Ending
 
-talk to Falo
+talk to Falo • 
 
-Unable To Obtain Forest's blessing
+Unable To Obtain Forest's blessing X (Refusal of information makes more sense)
 
-Lose
+Lose *
 
 # Flowchart
 
