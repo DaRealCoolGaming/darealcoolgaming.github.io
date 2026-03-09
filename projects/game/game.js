@@ -157,8 +157,7 @@ function playTrack(key){
 function locationPrompt(title, description, choices){
     clear();
     print('\n' + title);
-    print('\nplaceholder story here');
-    print('(README section: ' + description + ')');
+    print('\n'+ description);
     print('\nWhere do you want to go next? Say one of these choices:');
     choices.forEach(c => print('\t' + c));
 }
@@ -176,7 +175,7 @@ function house(){
     const choices = ['exit house','inventory','help'];
     // play house ambience
     playTrack('houses');
-    locationPrompt('House', 'Project Introduction', choices);
+    locationPrompt('House', 'You awaken to your old friend Tael waking you. Tael explains that his sister, Tatl, got lost exploring the Ancient Deku Tree and has yet to return. He pleads your help. Guess it\'s time to adventure again!', choices);
 
     function processInput(input){
         input = input.toLowerCase();
@@ -204,7 +203,7 @@ function cave(){
     const choices = ['pick up sticks','exit cave','help'];
     // play cave ambience
     playTrack('caves');
-    locationPrompt('Cave', 'Timeline', choices);
+    locationPrompt('Cave', 'You enter a dark cave just outside your house. Near the entrance there\'s a tree with loose branches.', choices);
 
     function processInput(input){
         input = input.toLowerCase();
@@ -215,10 +214,10 @@ function cave(){
         }
         if (input === 'pick up sticks' || input === 'pick up stick' || input === 'pick sticks'){
             if (!inventory.includes('sticks')) inventory.push('sticks');
-            print('\nYou picked up sticks.');
+            print('\nYou picked up some sticks.');
             waitThenCall(cave);
         } else if (input === 'exit cave' || input === 'exit'){
-            print('\nYou leave the cave and arrive at Kokiri Village');
+            print('\nYou leave the cave and arrive at the Kokiri Village');
             waitThenCall(kokiriVillage);
         } else {
             stayHere();
@@ -231,7 +230,7 @@ function cave(){
 function kokiriVillage(){
     currentLocation = 'village';
     const choices = ['enter house 1','enter house 2','enter house 3','enter forest','help'];
-    locationPrompt('Kokiri Village', 'Map and village area', choices);
+    locationPrompt('Kokiri Village', 'Entering into the Kokiri Village, you are hit with a sense of familiarity. These Kokiri, although not the ones you knew before, have grown quite accustomed to you. You see three houses you can go into.', choices);
 
     function processInput(input){
         input = input.toLowerCase();
@@ -261,7 +260,7 @@ function kokiriHouse1(){
     const choices = ['leave','help'];
     // play kokiri houses ambience
     playTrack('houses');
-    locationPrompt('Kokiri House 1', 'Timeline', choices);
+    locationPrompt('Kokiri House 1', 'Inside this house is a little Kokiri child. He seems to be skitish and runs away when you attempt to speak to him. Looking around there doesn\'t seem to be much to do here. It is best you leave.', choices);
     function processInput(input){
         input = input.toLowerCase();
         if (input === 'help'){
@@ -280,7 +279,7 @@ function kokiriHouse2(){
     const choices = ['talk to falo','leave','help'];
     // play kokiri houses ambience
     playTrack('houses');
-    locationPrompt('Kokiri House 2', 'Talk to Falo / Obtain blessing', choices);
+    locationPrompt('Kokiri House 2', 'Inside this house the Kokiri leader sits idly, watching the others roam about the forest. He notices you enter and spins around in his chair to look at you.', choices);
 
     function processInput(input){
         input = input.toLowerCase();
@@ -290,23 +289,26 @@ function kokiriHouse2(){
             return;
         }
         if (input === 'talk to falo' || input === 'talk falo'){
-            print('\nplaceholder story here');
-            print('(README section: talk to Falo)');
+            if (!inventory.includes("roc's feather"))
+            print('\nUpon explaining your situation to him, he warns you of the dangers of the Ancient Deku Tree. He speaks of a great evil found within, plaguing the village and causing many of the younger Kokiri to go missing. He speaks that if you were to defeat said evil, he might have some knowledge as to Tatl\'s location. He mentions a sword found inside a crypt guarded by an old Kokiri warrior. He asks that you DO NOT harm the warrior and simply take the sword and leave.');
+            waitThenCall(kokiriHouse2);
             // check for the feather and the boss is defeated
                 if (inventory.includes("roc's feather")){
                     // you murderer
                     if (kokiriWarriorAlive === false){
-                        print('\nFalo glares at you. "You shed the blood of our kin. I cannot grant you the Forest\'s blessing."');
+                        print('\nFalo glares at you. "You killed her... I refuse to aid you. Go to hell."');
+                        print('\nType proceed to continue.')
                         // lose boo
                         waitThenCall(function(){ badEnding(); });
                     } else {
                         forestBlessing = true;
-                        print("\nYou obtained the Forest's blessing! (global: forestBlessing = true)");
+                        print("\nFalo tell you of a fairy he saw leaving the Ancient Deku Tree. He says he spoke to the fairy and she said that she was on a mission to save the land from a \"great evil\". She flew away before he could ask any more questions though.");
+                        print('\nType proceed to continue.')
                         // win yay
                         waitThenCall(function(){ winScreen(); });
                     }
                 } else {
-                    print('\nFalo says you need to bring proof of your courage.');
+                    print('\nType proceed to continue on.');
                 }
         } else if (input === 'leave'){
             kokiriVillage();
@@ -318,15 +320,17 @@ function kokiriHouse2(){
         function winScreen(){
             // stop any music and show win message
             try{ MusicPlayer.stop(); }catch(e){}
+            try{ AudioPlayer.stop();}catch(e){}
             clear();
-            print('\nYOU WIN! Try different choices for a secret bad ending!');
+            print('\nYOU WON THE DEMO! Try different choices for a secret bad ending!');
             gameActive = false;
         }
 
 function badEnding(){
     try{ MusicPlayer.stop(); }catch(e){}
+    try{ AudioPlayer.stop();}catch(e){}
     clear();
-    print('\nBAD ENDING: Falo refuses to give you the Forest\'s blessing because you killed the Kokiri warrior.');
+    print('\nBAD ENDING: Falo refuses to aid you because you killed the Kokiri warrior.');
     print('\nTry different choices to find the good ending');
     gameActive = false;
 }
@@ -336,7 +340,7 @@ function kokiriHouse3(){
     const choices = ['leave','help'];
     // play kokiri houses ambience
     playTrack('houses');
-    locationPrompt('Kokiri House 3', 'Shop or talk', choices);
+    locationPrompt('Kokiri House 3', 'Inside this Kokiri house is a shop. They sell numerous items from a shield, to a pouch for more inventory space. Unfortunately for you, you are flat broke. It is best you leave.', choices);
     function processInput(input){
         input = input.toLowerCase();
         if (input === 'help'){
@@ -354,7 +358,7 @@ function forest(){
     // forest music
     playTrack('forests');
     const choices = ['enter crypt','enter mini forest','return to village','help'];
-    locationPrompt('Forest', 'Forest and Crypt area', choices);
+    locationPrompt('Forest', 'Walking deeper into the forest you find a fork in the road. One way leads to a Crypt of some sorts. The other, to the Ancient Deku Tree. A faint flute plays in the background. Probably some Kokiri child.', choices);
 
     function processInput(input){
         input = input.toLowerCase();
@@ -369,6 +373,7 @@ function forest(){
             waitThenCall(miniForest);
         } else if (input === 'return to village' || input === 'return'){
             MusicPlayer.stop();
+            AudioPlayer.stop();
             waitThenCall(kokiriVillage);
         } else { stayHere(); waitThenCall(forest); }
     }
@@ -380,7 +385,7 @@ function crypt(){
     // crypt ambience
     playTrack('crypt');
     const choices = ['fight kokiri warrior','spare kokiri warrior','leave','help'];
-    locationPrompt('Crypt', 'Crypt - choose to fight or spare', choices);
+    locationPrompt('Crypt', 'Inside the Crypt a Kokiri warrior suddenly appears. She is swinging her sword around wildly. It is kinda hard to believe THIS is the Kokiri tribes greatest warrior. Nevertheless do you fight her or spare her?', choices);
 
     function processInput(input){
         input = input.toLowerCase();
@@ -394,14 +399,12 @@ function crypt(){
             playTrack('mboss');
             kokiriWarriorAlive = false;
             inventory.push('kokiri sword');
-            print('\nYou killed the kokiri warrior and took the sword.');
-            print('(README section: Bad Ending start)');
+            print('\nYou killed the Kokiri warrior and took the sword. This action will have consequences...');
             waitThenCall(forest);
         } else if (input === 'spare kokiri warrior' || input === 'spare'){
             kokiriWarriorAlive = true;
             inventory.push('kokiri sword');
-            print('\nYou spared the warrior and took the sword.');
-            print('(README section: Good Ending start)');
+            print('\nYou spared the Kokiri warrior and took the sword. She seems surprised and falters for a second before regaining her guard. It is best you leave.');
             waitThenCall(forest);
         } else if (input === 'leave'){
             waitThenCall(forest);
@@ -413,7 +416,7 @@ function crypt(){
 function miniForest(){
     currentLocation = 'miniForest';
     const choices = ['enter ancient deku tree','leave','help'];
-    locationPrompt('Mini Forest', 'Mini forest and Ancient Deku Tree', choices);
+    locationPrompt('Mini Forest', 'Walking through the forest you find the Ancient Deku Tree. It is twice, maybe even thrice the size of the Deku Tree you once knew. Outside it Deku Babas threaten you were their strong jaws.', choices);
 
     function processInput(input){
         input = input.toLowerCase();
@@ -435,8 +438,8 @@ function ancientDekuTree(){
     currentLocation = 'ancientDekuTree';
     // ancient deku tree ambience
     playTrack('itadt');
-    const choices = ['find rocs feather','enter boss room','leave','help'];
-    locationPrompt('Ancient Deku Tree', 'Find Roc\'s feather and defeat Ghoma', choices);
+    const choices = ['look around','enter boss room','leave','help'];
+    locationPrompt('Ancient Deku Tree', 'Going into the Ancient Deku Tree there\'s many winding..hallways? If you look around there\'s a chance you could find something important.', choices);
 
     function processInput(input){
         input = input.toLowerCase();
@@ -445,12 +448,20 @@ function ancientDekuTree(){
             waitThenCall(ancientDekuTree);
             return;
         }
-        if (input === "find rocs feather" || input === 'find feather'){
+        if (input === "look around" || input === 'find feather'){
             if (!inventory.includes("roc's feather")) inventory.push("roc's feather");
-            print('\nYou found Roc\'s feather.');
+            print('\nLooking around the place you find a massive chest. Opening it you find it\'s.. empty? Wait no. There\'s a singular feather inside. Upon grabing it, it quadruples in size. On it, there\'s a label. \"Roc\'s Feather.\" Holding this you feel like you could maybe gain some extra height on a jump.');
+            print('\nType proceed to continue on.');
             waitThenCall(ancientDekuTree);
-        } else if (input === 'enter boss room' || input === 'boss'){
-            waitThenCall(bossRoom);
+        }else if (input === 'enter boss room' || input === 'boss') {
+    if (inventory.includes("roc's feather")) {
+        clear();
+        bossRoom();
+    } else {
+        print('\nThere is a MASSIVE gap between you and the Boss Room. There is no plausible way to get across at the moment.');
+        print('\nType proceed to continue on.');
+        waitThenCall(ancientDekuTree);
+    }
         } else if (input === 'leave'){
             waitThenCall(miniForest);
         } else { stayHere(); waitThenCall(ancientDekuTree); }
@@ -462,10 +473,10 @@ function bossRoom(){
     currentLocation = 'bossRoom';
     // boss music
     playTrack('boss');
+    print('\nUtilizing Roc\'s Feather, you jump across the gap to the Boss Room with ease.')
     printAscii("  _/\\_  \n (  o )  \n  \\\\__/   \n  /  \\");
     print('\nYou face the Ancient Ghoma.');
-    print('\nplaceholder story here');
-    print('(README section: Defeat ancient ghoma)');
+    print('\nA horrendous beast, double the size of the one you\'ve fought before. It\'s roar makes you tremble.');
     print('\nOptions: fight, flee, help');
 
     function processInput(input){
@@ -478,16 +489,19 @@ function bossRoom(){
         if (input === 'fight'){
             // pretty simple, have sword = win 
             if (inventory.includes('kokiri sword')){
-                print('\nYou defeated Ghoma and return with the feather to the village.');
+                print('\nAfter a feroucious battle, you finally defeat Ghoma and return with it\'s eye as proof to the village.');
+                print('\nType proceed to continue on.')
                 MusicPlayer.stop();
-                waitThenCall(() => { waitThenCall(kokiriHouse2); });
+                AudioPlayer.stop();
+                waitThenCall(kokiriVillage)
             } else {
-                print('\nYou fought bravely but lost.');
                 MusicPlayer.stop();
-                gameOver('lost to Ghoma');
+                AudioPlayer.stop();
+                gameOver('You fought bravely but lost to Ghoma.');
             }
         } else if (input === 'flee'){
             MusicPlayer.stop();
+            AudioPlayer.stop();
             print('\nYou flee back to the mini forest.');
             waitThenCall(miniForest);
         } else { stayHere(); waitThenCall(bossRoom); }
@@ -498,16 +512,16 @@ function bossRoom(){
 function gameOver(reason){
     clear();
     print('\nGame Over: ' + reason);
-    print('\nplaceholder story here');
-    print('(README section: Bad Ending)');
+    print('\nReload to try again!');
     gameActive = false;
 }
 
 // start
 function start(){
     print('Welcome to the text adventure!');
-    print('placeholder story here');
-    print('(README section: Project Introduction)');
+    print('After defeating the evil threatening Termina, the Hero of Time, Link, continued searching for his lost friend, his fairy; Navi. Yet after 15 long years, hope had all but faded. He returned to wander once again through the mystical Lost Woods. He soon found himself in a new land called Valana. It seemed as good a place as any to start a new life. He lived here in quiet peace for several years. However, something about the land of Valana always felt off, felt… sinister.');
+    print('This text based adventure game is based off the romhack known as The Legend of Zelda: Indigo by Kenton M.')
+    print('type proceed to start');
     function begin(input){
         house();
     }
