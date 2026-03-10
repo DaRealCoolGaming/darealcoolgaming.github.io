@@ -1,9 +1,83 @@
 let gameActive = true;
 
+const FOXY_CHECK_INTERVAL = 5000;
+const FOXY_COOLDOWN = 60000;
+// testing (change back to 1/100000 later)
+const FOXY_CHANCE = 1 / 100000;      
+const FOXY_DURATION = 1200;
+
+let foxyCooldown = false;
+let foxyImg = null;
+let foxySound = null;
+
+function initFoxy(){
+
+    // create gif
+    foxyImg = document.createElement("img");
+    foxyImg.src = "foxy.gif";
+    foxyImg.style.position = "fixed";
+    foxyImg.style.top = "50%";
+    foxyImg.style.left = "50%";
+    foxyImg.style.transform = "translate(-50%, -50%)";
+    foxyImg.style.zIndex = "999999";
+    foxyImg.style.display = "none";
+    foxyImg.style.pointerEvents = "none";
+    foxyImg.style.imageRendering = "pixelated";
+
+    document.body.appendChild(foxyImg);
+
+    // load sound
+    foxySound = new Audio("foxy.mp3");
+    foxySound.volume = 1.0;
+
+    startFoxyEvent();
+}
+
+function startFoxyEvent(){
+
+    setInterval(() => {
+
+        if (!gameActive) return;
+        if (!foxyImg) return;
+
+        if (!foxyCooldown && Math.random() < FOXY_CHANCE){
+
+            // restart gif
+            foxyImg.src = "foxy.gif?" + Date.now();
+
+            // show gif
+            foxyImg.style.display = "block";
+
+            // play sound
+            try{
+                foxySound.currentTime = 0;
+                foxySound.play();
+            }catch(e){}
+
+            foxyCooldown = true;
+
+            // hide gif after finish
+            setTimeout(() => {
+                foxyImg.style.display = "none";
+            }, FOXY_DURATION);
+
+            // reset cooldown
+            setTimeout(() => {
+                foxyCooldown = false;
+            }, FOXY_COOLDOWN);
+        }
+
+    }, FOXY_CHECK_INTERVAL);
+}
+
+// start when page loads
+window.addEventListener("DOMContentLoaded", initFoxy);
+
 let currentLocation = 'house';
 let inventory = [];
 let forestBlessing = false; 
 let kokiriWarriorAlive = true; // affects good/bad ending
+
 
 const MusicPlayer = (function(){
     let ToneLib = null;
