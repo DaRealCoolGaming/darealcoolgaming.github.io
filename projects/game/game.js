@@ -2,7 +2,7 @@ let gameActive = true;
 
 const FOXY_CHECK_INTERVAL = 5000;
 const FOXY_COOLDOWN = 60000;
-// testing (change back to 1/100000 later)
+// chance
 const FOXY_CHANCE = 1 / 100000;      
 const FOXY_DURATION = 1200;
 
