@@ -3,6 +3,7 @@
     <head>
         <title>Adrian Cool Portfolio</title>
         <link rel="stylesheet" href="style.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
 
@@ -53,27 +54,96 @@ This is a website I have coded to introduce specifically who I am, what I've don
 
                 <!--Categories-->
                 <div class="dropdown-section" id="drop-music">
-                    <button class="dropdown-header" onclick="toggleDropdown('music')">
-                        <span class="drop-arrow">►</span> Music
-                    </button>
-                    <div class="dropdown-body" id="body-music">
-                        <div class="cards-row">
-                            <div class="card">
-                                <p>Best Original</p>
-                                <!--Insert Song-->
-                            </div>
-                            <div class="card">
-                                <p>Best Reimagined</p>
-                                <!--Insert Song-->
-                            </div>
-                            <div class="card">
-                                <p>Best Cover</p>
-                                <!--Insert Song-->
-                            </div>
-                        </div>
+
+    <button class="dropdown-header" onclick="toggleDropdown('music')">
+        <span class="drop-arrow">►</span> Music
+    </button>
+    <div class="dropdown-body" id="body-music">
+        <div class="cards-row">
+            <div class="card">
+
+                <p>Best Original</p>
+                <p>My strongest original composition.</p>
+                <audio id="track-best-original" src="./Compression.mp3"></audio>
+                <div class="music-player">
+
+                <button class="music-play" onclick="playTrack('track-best-original', this)">
+                    ▶
+                </button>
+
+                    <div class="music-info">
+
+                        <span class="music-title">
+                            Best Original
+                        </span>
+
+                        <span class="music-length">
+                            2:42
+                        </span>
+
                     </div>
+
                 </div>
 
+            </div>
+
+            <div class="card">
+
+                <p>Best Arragement</p>
+                <p>
+                    An arrangement of an existing song in my style.
+                </p>
+                <audio id="track-best-arrangement" src="./Plead.mp3"></audio>
+                <div class="music-player">
+
+                <button class="music-play" onclick="playTrack('track-best-arrangement', this)">
+                    ▶
+                </button>
+
+                    <div class="music-info">
+
+                        <span class="music-title">
+                            Best Arrangement
+                        </span>
+
+                        <span class="music-length">
+                            4:54
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="card">
+
+                <p>Best Cover</p>
+                <p>
+                    My greatest cover of an existing song.
+                </p>
+                <audio id="track-best-cover" src="./Brickbat.mp3"></audio>
+                <div class="music-player">
+
+                <button class="music-play" onclick="playTrack('track-best-cover', this)">
+                    ▶
+                </button>
+
+                    <div class="music-info">
+
+                        <span class="music-title">
+                            Best Cover
+                        </span>
+
+                        <span class="music-length">
+                            5:37
+                        </span>
+                    </div>
+                </div>
+            </div>
+                </div>
+                </div>
+                </div>
                 <div class="dropdown-section" id="drop-web">
                     <button class="dropdown-header" onclick="toggleDropdown('web')">
                         <span class="drop-arrow">►</span> Web Development
@@ -92,7 +162,7 @@ This is a website I have coded to introduce specifically who I am, what I've don
                             </div>
                             <div class="card">
                                 <p>Javascript Game</p>
-                                <img src="./HyperRealisticFish.png" alt="the most realistic fish ever" style="scale:calc(3); margin-top: 20px;">
+                                <img src="./HyperRealisticFish.png" alt="the most realistic fish ever">
                                 <a href="https://gracehoppercenter.github.io/ict/s26/courses/itd210/projects/game/Game_Project/">Link</a>
                             </div>
                         </div>
@@ -116,7 +186,7 @@ This is a website I have coded to introduce specifically who I am, what I've don
                             </div>
                             <div class="card">
                                 <p>MacOS Security Auditing</p>
-                                <p>Analyzed and modified macOS applications to better understand software architecture and operating system restrictions. Developed technical, sales, and customer communication skills through collaborative software projects.</p>
+                                <p>Analyzed macOS applications to understand software architecture and OS restrictions. Developed technical, sales, and customer communication skills.</p>
                             </div>
                         </div>
                     </div>
@@ -126,10 +196,53 @@ This is a website I have coded to introduce specifically who I am, what I've don
 
             <!--Future Tab-->
             <section class="tab-content" id="tab-future">
-                <h1>Future</h1>
-                <div class="future-text">
-                    <p>As I've grown older my career path has changed multiple times. Once I had wanted to be a Lawyer and once I had wanted to be a computer programmer. But as I took up a hobby in Music, I had grown to love it more and more. Which is what led me to my current career path of working towards being a Musician. Specifically a scorer; making the scores and music for video games. My biggest hope is to get a job working at Microsoft under their XBOX sector. To acheive this goal, I'm working towards applying to North Carolina State University. At this college, I can go into a program where after I graduate I can partner up with any of the major tech companies operating out of North Carolina, like Epic Games and Microsoft.</p>
+            <div class="future-section">
+                <div class="future-header">
+                    <img
+                        class="future-photo"
+                        src="./AdrianPhoto.png"
+                        alt="Photo of Me!">
+                    <div class="future-intro">
+
+                        <h2>Looking Ahead</h2>
+
+                        <p class="future-quote">
+                            "My goal is to be just like Toby Fox, if not better!"
+                        </p>
+                    </div>
+
                 </div>
+
+                <div class="future-card">
+
+                    <h3>Career Goals</h3>
+
+                    <p>
+                        As I've grown older, my career aspirations have evolved from law to programming and ultimately to music. Today, my path leads towards composing for video games, where I can combine creativity, storytelling, and technology into memorable interactive experiences.
+                    </p>
+
+                </div>
+
+                <div class="future-card">
+
+                    <h3>Education</h3>
+
+                    <p>
+                        I plan to continue developing my skills at North Carolina State where they have a program that will let me get a job at any of the major tech companies operating out of North Carolina. Like Epic Games or Microsoft.
+                    </p>
+
+                </div>
+
+                <div class="future-card">
+
+                    <h3>Long-Term Vision</h3>
+
+                    <p>
+                        My long-term dream is to work as a composer within the video game industry, contributing music and creative ideas to projects that inspire people around the world.
+                    </p>
+
+                </div>
+
             </section>
 
             <!--Resume Tab-->

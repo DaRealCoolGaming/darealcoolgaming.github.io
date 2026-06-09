@@ -64,6 +64,42 @@ const dropMap = {
 
 let openDrop = null;
 
+let currentAudio = null;
+
+function playTrack(id) {
+
+    const audio = document.getElementById(id);
+
+    if (!audio) return;
+
+    if (currentAudio && currentAudio !== audio) {
+        currentAudio.pause();
+        currentAudio.currentTime = 0;
+    }
+
+    if (audio.paused) {
+        audio.play();
+        currentAudio = audio;
+    } else {
+        audio.pause();
+    }
+}
+
+function playTrack(id, button) {
+
+    const audio = document.getElementById(id);
+
+    if (!audio) return;
+
+    if (audio.paused) {
+        audio.play();
+        button.textContent = "⏸";
+    } else {
+        audio.pause();
+        button.textContent = "▶";
+    }
+}
+
 function toggleDropdown(key) {
     const { section, body } = dropMap[key];
     const sec  = document.getElementById(section);
