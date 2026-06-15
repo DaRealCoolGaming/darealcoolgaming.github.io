@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chemistry Final Flash Cards</title>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background: #f2f2f2;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+#container {
+    width: 90%;
+    max-width: 700px;
+    text-align: center;
+}
+
+#card {
+    background: white;
+    border-radius: 15px;
+    padding: 40px;
+    min-height: 220px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,.15);
+    transition: transform .15s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6em;
+    user-select: none;
+}
+
+#card:hover {
+    transform: scale(1.02);
+}
+
+#controls {
+    margin-top: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+#progress {
+    margin-top: 15px;
+    color: #555;
+}
+</style>
+</head>
+<body>
+
+<div id="container">
+    <div id="card"></div>
+
+    <div id="controls">
+        <button onclick="prevCard()">⬅ Previous</button>
+        <button onclick="flipCard()">🔄 Flip</button>
+        <button onclick="nextCard()">Next ➡</button>
+        <button onclick="shuffleCards()">🔀 Shuffle</button>
+    </div>
+
+    <div id="progress"></div>
+</div>
+
+<script>
+const flashcards = [
+{
+front: "What is a pure substance?",
+back: "Matter with a fixed composition, such as an element or compound. Examples: nickel (Ni) and oxygen (O₂)."
+},
+{
+front: "What is NH₄NO₂ called?",
+back: "Ammonium nitrite."
+},
+{
+front: "Characteristics of network covalent solids?",
+back: "High melting point, high boiling point, strong structures, covalent bonds throughout, generally poor electrical conductors."
+},
+{
+front: "What does Δ above a reaction arrow mean?",
+back: "Heat is added."
+},
+{
+front: "How many protons and electrons are in Ba²⁺?",
+back: "56 protons and 54 electrons."
+},
+{
+front: "Formula and molar mass of silver nitrate?",
+back: "AgNO₃, approximately 169.87 g/mol."
+},
+{
+front: "What is a hydrate?",
+back: "A compound containing water molecules chemically bound in its crystal structure."
+},
+{
+front: "Formula for a compound with 6 carbons, 12 hydrogens, and 1 oxygen?",
+back: "C₆H₁₂O."
+},
+{
+front: "Products of complete combustion?",
+back: "CO₂ and H₂O."
+},
+{
+front: "Balanced combustion of C₃H₇OH?",
+back: "2 C₃H₇OH + 9 O₂ → 6 CO₂ + 8 H₂O."
+},
+{
+front: "Why are parentheses used in ionic formulas?",
+back: "To keep polyatomic ions together when more than one is present."
+},
+{
+front: "Balanced equation: Al + Cl₂ → AlCl₃?",
+back: "2 Al + 3 Cl₂ → 2 AlCl₃."
+},
+{
+front: "Balanced equation: NaCl + F₂?",
+back: "2 NaCl + F₂ → 2 NaF + Cl₂."
+},
+{
+front: "What holds ionic compounds together?",
+back: "Electrostatic attraction between positive and negative ions."
+},
+{
+front: "14 inches over 48 hours equals?",
+back: "0.29 inches per hour."
+},
+{
+front: "What group is iodine in?",
+back: "Group 17 (Halogens)."
+},
+{
+front: "Atomic mass of lead?",
+back: "207.2 amu."
+},
+{
+front: "Electron configuration of phosphorus?",
+back: "1s² 2s² 2p⁶ 3s² 3p³."
+},
+{
+front: "Formula for percent yield?",
+back: "(Actual Yield ÷ Theoretical Yield) × 100%."
+},
+{
+front: "How do you find the limiting reactant?",
+back: "Determine which reactant runs out first using mole ratios."
+},
+{
+front: "Simplest representation showing atoms and bonds?",
+back: "Structural diagram."
+},
+{
+front: "Formula of tetraphosphorus hexaoxide?",
+back: "P₄O₆."
+},
+{
+front: "Where do covalent bonds usually form?",
+back: "Between nonmetals."
+},
+{
+front: "Chocolate chip cookie classification?",
+back: "Heterogeneous mixture."
+},
+{
+front: "Which is NOT evidence of a chemical change?",
+back: "Bending or folding a substance."
+},
+{
+front: "Name (NH₄)₂SO₄.",
+back: "Ammonium sulfate."
+},
+{
+front: "Molar mass of (NH₄)₂SO₄?",
+back: "Approximately 132.14 g/mol."
+},
+{
+front: "Formula for ethane?",
+back: "C₂H₆."
+},
+{
+front: "Balanced decomposition of silver oxide?",
+back: "2 Ag₂O → 4 Ag + O₂."
+},
+{
+front: "Atomic mass of antimony?",
+back: "121.76 amu."
+},
+{
+front: "What do Zn, Cd, and Hg have in common?",
+back: "Their s and d valence subshells are completely filled."
+},
+{
+front: "Name CaCl₂.",
+back: "Calcium chloride."
+},
+{
+front: "Signs of a chemical change?",
+back: "Gas production, precipitate formation, color change, odor change, or heat/light production."
+},
+{
+front: "What is reduction?",
+back: "Gain of electrons."
+},
+{
+front: "How many moles of Cl⁻ are in 1 mole of BCl₃?",
+back: "3 moles."
+},
+{
+front: "What is a double replacement reaction?",
+back: "A reaction where two compounds exchange ions to form new compounds."
+},
+{
+front: "Rule for significant figures in multiplication/division?",
+back: "Answer should have the same number of significant figures as the value with the fewest."
+},
+{
+front: "43.8 ÷ 66 with correct significant figures?",
+back: "0.66."
+}
+];
+
+let current = 0;
+let showingFront = true;
+
+function render() {
+    document.getElementById("card").textContent =
+        showingFront ? flashcards[current].front : flashcards[current].back;
+
+    document.getElementById("progress").textContent =
+        `Card ${current + 1} of ${flashcards.length} (${showingFront ? "Question" : "Answer"})`;
+}
+
+function flipCard() {
+    showingFront = !showingFront;
+    render();
+}
+
+function nextCard() {
+    current = (current + 1) % flashcards.length;
+    showingFront = true;
+    render();
+}
+
+function prevCard() {
+    current = (current - 1 + flashcards.length) % flashcards.length;
+    showingFront = true;
+    render();
+}
+
+function shuffleCards() {
+    for (let i = flashcards.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [flashcards[i], flashcards[j]] = [flashcards[j], flashcards[i]];
+    }
+    current = 0;
+    showingFront = true;
+    render();
+}
+
+document.getElementById("card").addEventListener("click", flipCard);
+
+render();
+</script>
+
+</body>
+</html>
