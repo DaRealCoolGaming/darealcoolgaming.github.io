@@ -795,10 +795,15 @@
     return allProducts().find(item => item.id === id);
   }
 
+  function normalizeImagePath(path) {
+    return String(path || "").replace(/^images\//i, "Images/");
+  }
+
   function imageMarkup(product, small = false) {
     const cls = small ? "" : "product-image";
-    const fallback = small ? "images/" : "Product image";
-    return `<img class="${cls}" src="${escapeAttr(product.image)}" alt="${escapeAttr(product.name)}" onerror="this.onerror=null;this.outerHTML='<div class=&quot;image-fallback&quot;>${escapeHtml(fallback)}</div>'">`;
+    const fallback = small ? "Images/" : "Product image";
+    const source = normalizeImagePath(product.image);
+    return `<img class="${cls}" src="${escapeAttr(source)}" alt="${escapeAttr(product.name)}" onerror="this.onerror=null;this.outerHTML='<div class=&quot;image-fallback&quot;>${escapeHtml(fallback)}</div>'">`;
   }
 
   function renderProducts() {
